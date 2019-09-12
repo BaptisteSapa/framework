@@ -1,7 +1,13 @@
 @import 'reset';
-@import 'imports';
 
 @import 'config';
 
-@import 'commons';
-@import 'main';
+@import 'layout';
+@import 'flexbox';
+@import 'sizing';
+@import 'spacing';
+@import 'typography';
+@import 'borders';
+@import 'backgrounds';
+@import 'effects';
+@import 'interactivity';
