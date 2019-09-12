@@ -1,28 +1,39 @@
 const path = require('path')
+const dev = process.env.NODE_ENV === "dev"
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ImageminMozjpeg = require('imagemin-mozjpeg')
 const ImageminSvgo = require('imagemin-svgo')
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
+// const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
-module.exports = {
+let config = {
+    stats: {
+        children: dev ? false : true //? Hides overfull of verbose in 'dev' mode
+    },
     entry: './src/scripts/index.js',
     output: {
         filename: 'js/main.js',
         path: path.resolve(__dirname, 'dist'),
     },
+    devtool: dev ? "cheap-module-eval-source-map" : false,
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
         compress: true,
         open: true,
         stats: 'minimal',
+        // host: '10.18.73.94', //? ecv digital
+        // port: 3000,
     },
     module: {
         rules: [
             {
-                test: /\.(png|jpg|svg)$/i,
+                test: /\.js$/,
+                use: ['babel-loader']
+            },
+            {
+                test: /\.(png|jpg|jpeg|svg|gif)$/,
                 use: [
                     {
                         loader: 'file-loader',
@@ -42,9 +53,14 @@ module.exports = {
                 }
             },
             {
-                test: /\.scss$/,
+                test: /\.(sc|sa)ss$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            publicPath: '../' //? Relative path to style's URLs
+                        }
+                    },
                     "css-loader",
                     "postcss-loader",
                     "sass-loader"
@@ -60,9 +76,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'index',
             template: './src/index.ejs',
-            minify: {
+            minify: dev ? false : {
                 collapseWhitespace: true,
                 removeComments: true,
                 removeRedundantAttributes: true,
@@ -71,17 +86,16 @@ module.exports = {
                 useShortDoctype: true
             }
         }),
-        new ImageminWebpackPlugin({
-            plugins: [
-                ImageminMozjpeg({ quality: 75 }),
-                ImageminSvgo()
-            ]
-        }),
-        new UglifyJsPlugin({
-            uglifyOptions: {
-                output: {
-                    comments: false
-                }
+        new HtmlWebpackPlugin({
+            template: './src/pages/page.ejs',
+            filename: "page.html",
+            minify: dev ? false : {
+                collapseWhitespace: true,
+                removeComments: true,
+                removeRedundantAttributes: true,
+                removeScriptTypeAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                useShortDoctype: true
             }
         }),
         new CleanWebpackPlugin(),
@@ -91,3 +105,23 @@ module.exports = {
         })
     ]
 }
+
+if (!dev) {
+    config.plugins.push(
+        // new UglifyJsPlugin({
+        //     uglifyOptions: {
+        //         output: {
+        //             comments: false
+        //         }
+        //     }
+        // }),
+        new ImageminWebpackPlugin({
+            plugins: [
+                ImageminMozjpeg({ quality: 75 }),
+                ImageminSvgo()
+            ]
+        })
+    )
+}
+
+module.exports = config

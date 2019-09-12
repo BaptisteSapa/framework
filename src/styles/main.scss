@@ -1,0 +1,49 @@
+// ---------------------------------------- //
+//      ANCHOR -- demo (to delete)
+// ---------------------------------------- //
+
+#nav {
+    background: $colorNavBackground;
+    color: $colorNavElement;
+    padding: $spaceSm;
+}
+
+h1 {
+    font-size: 2.8rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+    line-height: 1.4;
+}
+
+#demo__0 {
+    h2 {
+        margin: $spaceSm 0;
+    }
+}
+
+p {
+    line-height: 1.6;
+}
+
+img {
+    width: 100%;
+    margin: $spaceSm 0;
+}
+
+section:nth-of-type(even) {
+    background: #fafafa;
+}
+
+.on__scroll {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(4rem);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    &.is-inview {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+}

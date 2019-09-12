@@ -1,5 +1,4 @@
-# framework
-framework of Mathieu Daix.
+# colorblend
 
 ## Installation
 ```sh

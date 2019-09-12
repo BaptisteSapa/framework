@@ -1,5 +1,111 @@
 <%= require('./template/header.ejs')() %>
 
+<!-------------------- ANCHOR -- image -------------------->
+<section id="demo__0" class="section section__column__1">
+    <div class="container">
+        <div class="section__title">
+            <h1>Website template</h1>
+            <h2>Optimised image - Need to convert in 3 sizes : 500px, 1000px and 1500px and keep the original</h2>
+            <p data-scroll-to href="#demo__1">Click to scroll to the next section</p>
+        </div>
+        <div class="section__container">
+            <div class="section__content">
+                <img src="<%= require('./images/briggs-boyd-UTpsWrVF49Q-unsplash.jpg') %>" srcset="<%= require('./images/briggs-boyd-UTpsWrVF49Q-unsplash-500w.jpg') %> 500w, <%= require('./images/briggs-boyd-UTpsWrVF49Q-unsplash-1000w.jpg') %> 1000w, <%= require('./images/briggs-boyd-UTpsWrVF49Q-unsplash-1500w.jpg') %> 1500w" alt="briggs-boyd-UTpsWrVF49Q-unsplash">
+                <p data-scroll data-scroll-offset="10%" class="on__scroll">Apparition au scroll</p>
+            </div>
+        </div>
+    </div>
+</section>
 
+<!-------------------- ANCHOR -- section column 1 -------------------->
+<section id="demo__1" class="section section__column__1">
+    <div class="container">
+        <div class="section__title">
+            <h2>Section with 1 column</h2>
+        </div>
+        <div class="section__container">
+            <div class="section__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem velit, tempora sed doloribus facilis, facere totam natus optio corporis sit perferendis quo deserunt et libero quisquam, maxime laudantium qui illo.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-------------------- ANCHOR -- section column 2 stretch element -------------------->
+<section id="demo__2" class="section section__column__2 section__stretch">
+    <div class="container">
+        <div class="section__title">
+            <h2>Section with 2 columns (stretch)</h2>
+        </div>
+        <div class="section__container">
+            <div class="section__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem velit, tempora sed doloribus facilis, facere totam natus optio corporis sit perferendis quo deserunt et libero quisquam, maxime laudantium qui illo.</p>
+            </div>
+            <div class="section__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, fugit iure placeat sapiente explicabo perspiciatis libero mollitia dolorem voluptatum? Recusandae expedita, quo debitis sed iusto odio adipisci repellendus rerum aliquam! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni commodi aliquam quo sapiente ducimus enim omnis aliquid possimus obcaecati asperiores perferendis debitis sit architecto molestias vel ullam, iure nostrum adipisci!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-------------------- ANCHOR -- section column 2 center element -------------------->
+<section id="demo__3" class="section section__column__2 section__center">
+    <div class="container">
+        <div class="section__title">
+            <h2>Section with 2 columns (center)</h2>
+        </div>
+        <div class="section__container">
+            <div class="section__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem velit, tempora sed doloribus facilis, facere totam natus optio corporis sit perferendis quo deserunt et libero quisquam, maxime laudantium qui illo.</p>
+            </div>
+            <div class="section__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, fugit iure placeat sapiente explicabo perspiciatis libero mollitia dolorem voluptatum? Recusandae expedita, quo debitis sed iusto odio adipisci repellendus rerum aliquam! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni commodi aliquam quo sapiente ducimus enim omnis aliquid possimus obcaecati asperiores perferendis debitis sit architecto molestias vel ullam, iure nostrum adipisci!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-------------------- ANCHOR -- section column 3 strech element (exists in center too) -------------------->
+<section id="demo__5" class="section section__column__3 section__stretch">
+    <div class="container">
+        <div class="section__title">
+            <h2>Section with 3 columns</h2>
+        </div>
+        <div class="section__container">
+            <div class="section__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem velit, tempora sed doloribus facilis, facere totam natus optio corporis sit perferendis quo deserunt et libero quisquam, maxime laudantium qui illo.</p>
+            </div>
+            <div class="section__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, fugit iure placeat sapiente explicabo perspiciatis libero mollitia dolorem voluptatum? Recusandae expedita, quo debitis sed iusto odio adipisci repellendus rerum aliquam! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni commodi aliquam quo sapiente ducimus enim omnis aliquid possimus obcaecati asperiores perferendis debitis sit architecto molestias vel ullam, iure nostrum adipisci!</p>
+            </div>
+            <div class="section__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem velit, tempora sed doloribus facilis, facere totam natus optio corporis sit perferendis quo deserunt et libero quisquam, maxime laudantium qui illo.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-------------------- ANCHOR -- section column 4 strech element (exists in center too) -------------------->
+<section id="demo__6" class="section section__column__4 section__stretch">
+    <div class="container">
+        <div class="section__title">
+            <h2>Section with 4 columns</h2>
+        </div>
+        <div class="section__container">
+            <div class="section__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem velit, tempora sed doloribus facilis, facere totam natus optio corporis sit perferendis quo deserunt et libero quisquam, maxime laudantium qui illo.</p>
+            </div>
+            <div class="section__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, fugit iure placeat sapiente explicabo perspiciatis libero mollitia dolorem voluptatum? Recusandae expedita, quo debitis sed iusto odio adipisci repellendus rerum aliquam! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni commodi aliquam quo sapiente ducimus enim omnis aliquid possimus obcaecati asperiores perferendis debitis sit architecto molestias vel ullam, iure nostrum adipisci!</p>
+            </div>
+            <div class="section__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem velit, tempora sed doloribus facilis, facere totam natus optio corporis sit perferendis quo deserunt et libero quisquam, maxime laudantium qui illo.</p>
+            </div>
+            <div class="section__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem velit, tempora sed doloribus facilis, facere totam natus optio corporis sit perferendis quo deserunt et libero quisquam, maxime laudantium qui illo.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 <%= require('./template/footer.ejs')() %>
