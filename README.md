@@ -1,4 +1,4 @@
-# colorblend
+# framework
 
 ## Installation
 ```sh
