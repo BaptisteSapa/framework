@@ -4,16 +4,17 @@
 
 .container {
     width: 100%;
+    margin: 0 auto;
     @media ($sm) {
         max-width: 640px;
     }
-    @media ($sm) {
+    @media ($md) {
         max-width: 768px;
     }
-    @media ($sm) {
+    @media ($lg) {
         max-width: 1024px;
     }
-    @media ($sm) {
+    @media ($xl) {
         max-width:  1280px;
     }
 }
