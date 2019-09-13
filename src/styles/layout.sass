@@ -2,22 +2,19 @@
 //      ANCHOR -- container
 // ---------------------------------------- //
 
-.container {
-    width: 100%;
-    margin: 0 auto;
-    @media ($sm) {
-        max-width: 640px;
-    }
-    @media ($md) {
-        max-width: 768px;
-    }
-    @media ($lg) {
-        max-width: 1024px;
-    }
-    @media ($xl) {
-        max-width:  1280px;
-    }
-}
+.container
+    width: 100%
+    margin: 0 auto
+    height: 200px
+    background: #aee
+    @media ($sm)
+        max-width: $sm-value
+    @media ($md)
+        max-width: $md-value
+    @media ($lg)
+        max-width: $lg-value
+    @media ($xl) 
+        max-width: $xl-value
 
 // ---------------------------------------- //
 //      ANCHOR -- display
