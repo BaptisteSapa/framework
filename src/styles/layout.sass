@@ -4,10 +4,7 @@
 
 .container
     width: 100%
-    margin: 0 auto
-    height: 200px
-    background: #aee
-    @media ($sm)
+    @media ($#{minw}#{$sm-value})
         max-width: $sm-value
     @media ($md)
         max-width: $md-value
@@ -16,13 +13,28 @@
     @media ($xl) 
         max-width: $xl-value
 
+$sm: 'min-width: #{$sm-value}'
+$md: 'min-width: #{$md-value}'
+$lg: 'min-width: #{$lg-value}'
+$xl: 'min-width: #{$xl-value}'
+
 // ---------------------------------------- //
 //      ANCHOR -- display
 // ---------------------------------------- //
 
+$displays: block, inline-block, inline, flex, inline-flex, none
+
+@each $breakpoint in $breakpoints
+    @each $display in $displays
+        .#{$breakpoint}-#{$display}
+            display: #{$display}
+
 // ---------------------------------------- //
 //      ANCHOR -- object fit
 // ---------------------------------------- //
+
+.obj-contain
+    object-fit: contain
 
 // ---------------------------------------- //
 //      ANCHOR -- object position
