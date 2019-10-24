@@ -52,7 +52,7 @@ $fits: contain, cover, fill, scale-down, none
 $positions: bottom, center, left, left bottom, left top, right, right bottom, right top, top
 
 @each $position in $positions
-    .obj-#{str-replace(#{$position}, ' ', '-')
+    .obj-#{str-replace(#{$position}, ' ', '-')}
         object-position: #{$position}
 
 // ---------------------------------------- //
@@ -70,13 +70,12 @@ $displays: '', x, y
 //      ANCHOR -- position
 // ---------------------------------------- //
 
-$overflows: '', -x, -y
 $overflowProps: auto, hidden, visible, scroll
 
-@each $overflow in $overflows
+@each $ax in $axis
     @each $overflowProp in $overflowProps
-        .overflow#{$overflow}-#{$overflowProp}
-            overflow#{$overflow}: #{$overflowProp}
+        .overflow#{$ax}-#{$overflowProp}
+            overflow#{$ax}: #{$overflowProp}
 
 // ---------------------------------------- //
 //      ANCHOR -- position
@@ -91,6 +90,11 @@ $positions: static, fixed, absolute, relative, sticky
 // ---------------------------------------- //
 //      TODO -- top right bottom left
 // ---------------------------------------- //
+
+$sides: top, right, bottom, left
+@each $side in $sides
+    .#{$side}-0
+        #{$side}: 0
 
 // ---------------------------------------- //
 //      ANCHOR -- visibility
