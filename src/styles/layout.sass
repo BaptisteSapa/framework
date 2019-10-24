@@ -43,12 +43,6 @@ $fits: contain, cover, fill, scale-down, none
 //      ANCHOR -- object position
 // ---------------------------------------- //
 
-@function str-replace($string, $search, $replace: '')
-    $index: str-index($string, $search)
-    @if $index
-        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace)
-    @return $string
-
 $positions: bottom, center, left, left bottom, left top, right, right bottom, right top, top
 
 @each $position in $positions
@@ -57,15 +51,6 @@ $positions: bottom, center, left, left bottom, left top, right, right bottom, ri
 
 // ---------------------------------------- //
 //      ANCHOR -- overflow
-// ---------------------------------------- //
-
-@each $breakpoint in $breakpoints
-    @each $ax in $axis
-        .#{$breakpoint}#{$ax}
-            display: #{str-replace(#{$ax}, '-', '')}
-
-// ---------------------------------------- //
-//      ANCHOR -- position
 // ---------------------------------------- //
 
 $overflowProps: auto, hidden, visible, scroll
@@ -111,5 +96,5 @@ $visibilities: visible, hidden
 $indexes: 0, 10, 20, 25, 30, 40, 50, 75, 100, auto, -1
 
 @each $index in $indexes
-    z-#{$index}
+    .z-#{$index}
         z-index: #{$index}
