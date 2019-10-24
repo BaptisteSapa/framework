@@ -12,7 +12,7 @@
     "prod": "set NODE_ENV=prod&&webpack -d"
   },
   "author": "Pierre Darrieutort, Mathieu Daix",
-  "license": "MIT",
+  "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",

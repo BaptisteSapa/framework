@@ -40,13 +40,19 @@ $fits: contain, cover, fill, scale-down, none
         object-fit: #{$fit}
 
 // ---------------------------------------- //
-//      FIXME -- object position
+//      ANCHOR -- object position
 // ---------------------------------------- //
 
+@function str-replace($string, $search, $replace: '')
+    $index: str-index($string, $search)
+    @if $index
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace)
+    @return $string
+
 $positions: bottom, center, left, left bottom, left top, right, right bottom, right top, top
-    
+
 @each $position in $positions
-    .obj-#{$position}
+    .obj-#{str-replace(#{$position}, ' ', '-')}
         object-position: #{$position}
 
 // ---------------------------------------- //
