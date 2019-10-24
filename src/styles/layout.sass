@@ -33,18 +33,21 @@ $displays: block, inline-block, inline, flex, inline-flex, none
 //      ANCHOR -- object fit
 // ---------------------------------------- //
 
-// .obj-contain
-//     object-fit: contain
+$fits: contain, cover, fill, scale-down, none
 
-$contains: contain, cover, fill, scale-down, none
-
-@each $contain in $contains
-    .obj-#{$contain}
-        object-fit: #{$contain}
+@each $fit in $fits
+    .obj-#{$fit}
+        object-fit: #{$fit}
 
 // ---------------------------------------- //
-//      ANCHOR -- object position
+//      FIXME -- object position
 // ---------------------------------------- //
+
+$positions: bottom, center, left, left bottom, left top, right, right bottom, right top, top
+    
+@each $position in $positions
+    .obj-#{$position}
+        object-position: #{$position}
 
 // ---------------------------------------- //
 //      ANCHOR -- overflow
