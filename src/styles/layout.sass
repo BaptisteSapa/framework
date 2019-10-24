@@ -52,25 +52,62 @@ $fits: contain, cover, fill, scale-down, none
 $positions: bottom, center, left, left bottom, left top, right, right bottom, right top, top
 
 @each $position in $positions
-    .obj-#{str-replace(#{$position}, ' ', '-')}
+    .obj-#{str-replace(#{$position}, ' ', '-')
         object-position: #{$position}
 
 // ---------------------------------------- //
 //      ANCHOR -- overflow
 // ---------------------------------------- //
 
+$displays: '', x, y
+
+@each $breakpoint in $breakpoints
+    @each $display in $displays
+        .#{$breakpoint}-#{$display}
+            display: #{$display}
+
 // ---------------------------------------- //
 //      ANCHOR -- position
 // ---------------------------------------- //
 
+$overflows: '', -x, -y
+$overflowProps: auto, hidden, visible, scroll
+
+@each $overflow in $overflows
+    @each $overflowProp in $overflowProps
+        .overflow#{$overflow}-#{$overflowProp}
+            overflow#{$overflow}: #{$overflowProp}
+
 // ---------------------------------------- //
-//      ANCHOR -- top right bottom left
+//      ANCHOR -- position
+// ---------------------------------------- //
+
+$positions: static, fixed, absolute, relative, sticky
+
+@each $pos in $positions
+    .#{$pos}
+        position: #{$pos}
+
+// ---------------------------------------- //
+//      TODO -- top right bottom left
 // ---------------------------------------- //
 
 // ---------------------------------------- //
 //      ANCHOR -- visibility
 // ---------------------------------------- //
 
+$visibilities: visible, hidden
+
+@each $visibility in $visibilities
+    .#{$visibility}
+        visibility: #{$visibility}
+
 // ---------------------------------------- //
 //      ANCHOR -- z-index
 // ---------------------------------------- //
+
+$indexes: 0, 10, 20, 25, 30, 40, 50, 75, 100, auto, -1
+
+@each $index in $indexes
+    z-#{$index}
+        z-index: #{$index}
