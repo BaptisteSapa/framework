@@ -59,12 +59,10 @@ $positions: bottom, center, left, left bottom, left top, right, right bottom, ri
 //      ANCHOR -- overflow
 // ---------------------------------------- //
 
-$displays: '', x, y
-
 @each $breakpoint in $breakpoints
-    @each $display in $displays
-        .#{$breakpoint}-#{$display}
-            display: #{$display}
+    @each $ax in $axis
+        .#{$breakpoint}#{$ax}
+            display: #{str-replace(#{$ax}, '-', '')}
 
 // ---------------------------------------- //
 //      ANCHOR -- position
