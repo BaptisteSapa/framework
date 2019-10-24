@@ -2,9 +2,14 @@
 //      ANCHOR -- container
 // ---------------------------------------- //
 
+$sm: 'min-width: #{$sm-value}'
+$md: 'min-width: #{$md-value}'
+$lg: 'min-width: #{$lg-value}'
+$xl: 'min-width: #{$xl-value}'
+
 .container
     width: 100%
-    @media ($#{minw}#{$sm-value})
+    @media ($sm)
         max-width: $sm-value
     @media ($md)
         max-width: $md-value
@@ -12,11 +17,6 @@
         max-width: $lg-value
     @media ($xl) 
         max-width: $xl-value
-
-$sm: 'min-width: #{$sm-value}'
-$md: 'min-width: #{$md-value}'
-$lg: 'min-width: #{$lg-value}'
-$xl: 'min-width: #{$xl-value}'
 
 // ---------------------------------------- //
 //      ANCHOR -- display
