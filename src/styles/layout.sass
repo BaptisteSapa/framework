@@ -1,100 +1,173 @@
-// ---------------------------------------- //
-//      ANCHOR -- container
-// ---------------------------------------- //
-
-$sm: 'min-width: #{$sm-value}'
-$md: 'min-width: #{$md-value}'
-$lg: 'min-width: #{$lg-value}'
-$xl: 'min-width: #{$xl-value}'
-
+// ANCHOR ----- container
 .container
-    width: 100%
-    @media ($sm)
+    width: 90%
+    margin: 0 auto
+    @media ($sm-min)
         max-width: $sm-value
-    @media ($md)
+    @media ($md-min)
         max-width: $md-value
-    @media ($lg)
+    @media ($lg-min)
         max-width: $lg-value
-    @media ($xl) 
+    @media ($xl-min) 
         max-width: $xl-value
+    &-full
+        width: 100%
 
-// ---------------------------------------- //
-//      ANCHOR -- display
-// ---------------------------------------- //
-
+// ANCHOR ----- display
 $displays: block, inline-block, inline, flex, inline-flex, none
 
-@each $breakpoint in $breakpoints
-    @each $display in $displays
-        .#{$breakpoint}-#{$display}
-            display: #{$display}
-
-// ---------------------------------------- //
-//      ANCHOR -- object fit
-// ---------------------------------------- //
-
+// ANCHOR ----- object fit
 $fits: contain, cover, fill, scale-down, none
 
-@each $fit in $fits
-    .obj-#{$fit}
-        object-fit: #{$fit}
-
-// ---------------------------------------- //
-//      ANCHOR -- object position
-// ---------------------------------------- //
-
+// ANCHOR ----- object position
 $positions: bottom, center, left, left bottom, left top, right, right bottom, right top, top
 
-@each $position in $positions
-    .obj-#{str-replace(#{$position}, ' ', '-')}
-        object-position: #{$position}
-
-// ---------------------------------------- //
-//      ANCHOR -- overflow
-// ---------------------------------------- //
-
+// ANCHOR ----- overflow
 $overflowProps: auto, hidden, visible, scroll
 
-@each $ax in $axis
-    @each $overflowProp in $overflowProps
-        .overflow#{$ax}-#{$overflowProp}
-            overflow#{$ax}: #{$overflowProp}
-
-// ---------------------------------------- //
-//      ANCHOR -- position
-// ---------------------------------------- //
-
+// ANCHOR ----- position
 $positions: static, fixed, absolute, relative, sticky
 
-@each $pos in $positions
-    .#{$pos}
-        position: #{$pos}
-
-// ---------------------------------------- //
-//      TODO -- top right bottom left
-// ---------------------------------------- //
-
+// ANCHOR -- top right bottom left
 $sides: top, right, bottom, left
-@each $side in $sides
-    .#{$side}-0
-        #{$side}: 0
 
-// ---------------------------------------- //
-//      ANCHOR -- visibility
-// ---------------------------------------- //
-
+// ANCHOR -- visibility
 $visibilities: visible, hidden
 
-@each $visibility in $visibilities
-    .#{$visibility}
-        visibility: #{$visibility}
-
-// ---------------------------------------- //
-//      ANCHOR -- z-index
-// ---------------------------------------- //
-
+// ANCHOR -- z index
 $indexes: 0, 10, 20, 25, 30, 40, 50, 75, 100, auto, -1
 
-@each $index in $indexes
-    .z-#{$index}
-        z-index: #{$index}
+@media ($md-max)
+    @each $display in $displays
+        .#{$display}
+            display: #{$display}
+    @each $fit in $fits
+        .obj-#{$fit}
+            object-fit: #{$fit}
+    @each $position in $positions
+        .obj-#{str-replace(#{$position}, ' ', '-')}
+            object-position: #{$position}
+    @each $ax in $axis
+        @each $overflowProp in $overflowProps
+            .overflow#{$ax}-#{$overflowProp}
+                overflow#{$ax}: #{$overflowProp}
+    @each $pos in $positions
+        .#{$pos}
+            position: #{$pos}
+    @each $side in $sides
+        .#{$side}-0
+            #{$side}: 0
+    @each $visibility in $visibilities
+        .#{$visibility}
+            visibility: #{$visibility}
+    @each $index in $indexes
+        .z-#{$index}
+            z-index: #{$index}
+
+@media ($sm-min) and ($md-max)
+    @each $display in $displays
+        .#{$sm-name}-#{$display}
+            display: #{$display}
+    @each $fit in $fits
+        .#{$sm-name}-obj-#{$fit}
+            object-fit: #{$fit}
+    @each $position in $positions
+        .#{$sm-name}-obj-#{str-replace(#{$position}, ' ', '-')}
+            object-position: #{$position}
+    @each $ax in $axis
+        @each $overflowProp in $overflowProps
+            .#{$sm-name}-overflow#{$ax}-#{$overflowProp}
+                overflow#{$ax}: #{$overflowProp}
+    @each $pos in $positions
+        .#{$sm-name}-#{$pos}
+            position: #{$pos}
+    @each $side in $sides
+        #{$sm-name}-#{$side}-0
+            #{$side}: 0
+    @each $visibility in $visibilities
+        .#{$sm-name}-#{$visibility}
+            visibility: #{$visibility}
+    @each $index in $indexes
+        .#{$sm-name}-z-#{$index}
+            z-index: #{$index}
+
+@media ($md-min) and ($lg-max)
+    @each $display in $displays
+        .#{$md-name}-#{$display}
+            display: #{$display}
+    @each $fit in $fits
+        .#{$md-name}-obj-#{$fit}
+            object-fit: #{$fit}
+    @each $position in $positions
+        .#{$md-name}-obj-#{str-replace(#{$position}, ' ', '-')}
+            object-position: #{$position}
+    @each $ax in $axis
+        @each $overflowProp in $overflowProps
+            .#{$md-name}-overflow#{$ax}-#{$overflowProp}
+                overflow#{$ax}: #{$overflowProp}
+    @each $pos in $positions
+        .#{$lg-name}-#{$pos}
+            position: #{$pos}
+    @each $side in $sides
+        #{$md-name}-#{$side}-0
+            #{$side}: 0
+    @each $visibility in $visibilities
+        .#{$md-name}-#{$visibility}
+            visibility: #{$visibility}
+    @each $index in $indexes
+        .#{$md-name}-z-#{$index}
+            z-index: #{$index}
+
+@media ($lg-min) and ($xl-max)
+    @each $display in $displays
+        .#{$lg-name}-#{$display}
+            display: #{$display}
+    @each $fit in $fits
+        .#{$lg-name}-obj-#{$fit}
+            object-fit: #{$fit}
+    @each $position in $positions
+        .#{$lg-name}-obj-#{str-replace(#{$position}, ' ', '-')}
+            object-position: #{$position}
+    @each $ax in $axis
+        @each $overflowProp in $overflowProps
+            .#{$lg-name}-overflow#{$ax}-#{$overflowProp}
+                overflow#{$ax}: #{$overflowProp}
+    @each $pos in $positions
+        .#{$lg-name}-#{$pos}
+            position: #{$pos}
+    @each $side in $sides
+        #{$lg-name}-#{$side}-0
+            #{$side}: 0
+    @each $visibility in $visibilities
+        .#{$lg-name}-#{$visibility}
+            visibility: #{$visibility}
+    @each $index in $indexes
+        .#{$lg-name}-z-#{$index}
+            z-index: #{$index}
+
+@media ($xl-min)
+    @each $display in $displays
+        .#{$xl-name}-#{$display}
+            display: #{$display}
+    @each $fit in $fits
+        .#{$xl-name}-obj-#{$fit}
+            object-fit: #{$fit}
+    @each $position in $positions
+        .#{$xl-name}-obj-#{str-replace(#{$position}, ' ', '-')}
+            object-position: #{$position}
+    @each $ax in $axis
+        @each $overflowProp in $overflowProps
+            .#{$xl-name}-overflow#{$ax}-#{$overflowProp}
+                overflow#{$ax}: #{$overflowProp}
+    @each $pos in $positions
+        .#{$xl-name}-#{$pos}
+            position: #{$pos}
+    @each $side in $sides
+        #{$xl-name}-#{$side}-0
+            #{$side}: 0
+    @each $visibility in $visibilities
+        .#{$xl-name}-#{$visibility}
+            visibility: #{$visibility}
+    @each $index in $indexes
+        .#{$xl-name}-z-#{$index}
+            z-index: #{$index}
