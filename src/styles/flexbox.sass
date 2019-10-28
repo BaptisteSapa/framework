@@ -1,0 +1,13 @@
+// ANCHOR ----- flex direction
+$flexDirection: (row: row, row-reverse: row-reverse, col: column, col-reverse: column-reverse)
+
+// ANCHOR ----- flex wrap
+$flexWrap: (no-wrap: nowrap, wrap: wrap, wrap-reverse: wrap-reverse)
+
+@media ($md-max)
+	@each $flexDirectionProperty, $flexDirectionValue in $flexDirection
+        .fd-#{$flexDirectionProperty}
+        	flex-direction: #{$flexDirectionValue}
+	@each $flexWrapProperty, $flexWrapValue in $flexWrap
+        .fw-#{$flexWrapProperty}
+        	flex-wrap: #{$flexWrapValue}
