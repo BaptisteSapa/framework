@@ -5,8 +5,8 @@
     "description": "Framework.",
     "main": "index.js",
     "scripts": {
-        "dev": "webpack-dev-server --watch",
-        "prod": "webpack"
+        "dev": "npx webpack-dev-server",
+        "prod": "npx webpack"
     },
     "browserslist": [
         "> 0%"
@@ -14,7 +14,7 @@
     "devDependencies": {
         "@babel/core": "^7.6.4",
         "@babel/preset-env": "^7.6.3",
-        "autoprefixer": "^9.6.5",
+        "autoprefixer": "^9.7.1",
         "babel-loader": "^8.0.6",
         "clean-webpack-plugin": "^3.0.0",
         "css-loader": "^3.2.0",
@@ -25,11 +25,11 @@
         "imagemin-mozjpeg": "^8.0.0",
         "imagemin-webp": "^5.1.0",
         "mini-css-extract-plugin": "^0.8.0",
-        "node-sass": "^4.12.0",
+        "node-sass": "^4.13.0",
         "postcss-loader": "^3.0.0",
         "sass-loader": "^8.0.0",
         "webpack": "^4.41.2",
-        "webpack-cli": "^3.3.9",
-        "webpack-dev-server": "^3.8.2"
+        "webpack-cli": "^3.3.10",
+        "webpack-dev-server": "^3.9.0"
     }
 }

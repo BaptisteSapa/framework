@@ -7,10 +7,10 @@ module.exports = {
     entry: './src/scripts/index.js',
     output: {
         filename: './scripts/bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve('dist')
     },
     devServer: {
-        contentBase: path.join(__dirname, 'dist'),
+        contentBase: path.resolve('dist'),
         open: true,
         compress: true,
         stats: 'errors-only'
@@ -18,7 +18,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.js$/i,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
@@ -28,7 +28,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.(sa|sc)ss$/,
+                test: /\.s(a|c)ss$/i,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
@@ -42,7 +42,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(jpg|png|svg|webp)$/,
+                test: /\.(jpe?g|png|svg|webp)$/i,
                 loader: 'file-loader',
                 options: {
                     name: '[name].[ext]',
@@ -50,7 +50,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.(eot|otf|ttf|woff|woff2)$/,
+                test: /\.(eot|otf|ttf|woff2?)$/i,
                 loader: 'file-loader',
                 options: {
                     name: '[name].[ext]',
@@ -58,7 +58,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.ejs$/,
+                test: /\.ejs$/i,
                 use: [
                     'ejs-loader'
                 ]
@@ -73,12 +73,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Homepage',
             template: './src/index.ejs',
-        }),
-        ...[].map(el => {
-            return new HtmlWebpackPlugin({
-                template: `./src/${el}.ejs`,
-                filename: `${el}.html`,
-            })
         })
     ]
 }
