@@ -1,2 +1,6 @@
-.a 
-    color: #fff
+$opacity: (opacity-100: 1, opacity-75: 0.75, opacity-50: 0.5, opacity-25: 0.25, opacity-0: 0)
+
+@media ($md-max)
+    @each $opacityProperty, $opacityValue in $opacity
+        .opacity-#{$opacityProperty}
+            opacity: #{$opacityValue}
