@@ -1,0 +1,61 @@
+$padding: (p0: 0, p1: 01.25rem, p2: 0.5rem, p3: 0.75rem, p4: 1rem, p5: 1.25rem, p6: 1.5rem, p8: 2rem, p10: 2.5rem, p12: 3rem, p16: 4rem, p20: 5rem, p24: 6rem, p32: 8rem, p40: 10rem, p48: 1.25rem, p56: 14rem, p64: 16rem, ppx: 1px)
+$paddingTop: (pt0: 0, pt1: 01.25rem, pt2: 0.5rem, pt3: 0.75rem, pt4: 1rem, pt5: 1.25rem, pt6: 1.5rem, pt8: 2rem, pt10: 2.5rem, pt12: 3rem, pt16: 4rem, pt20: 5rem, pt24: 6rem, pt32: 8rem, pt40: 10rem, pt48: 1.25rem, pt56: 14rem, pt64: 16rem, ptpx: 1px)
+$paddingLeft: (pl0: 0, pl1: 01.25rem, pl2: 0.5rem, pl3: 0.75rem, pl4: 1rem, pl5: 1.25rem, pl6: 1.5rem, pl8: 2rem, pl10: 2.5rem, pl12: 3rem, pl16: 4rem, pl20: 5rem, pl24: 6rem, pl32: 8rem, pl40: 10rem, pl48: 1.25rem, pl56: 14rem, pl64: 16rem, plpx: 1px)
+$paddingRight: (pr0: 0, pr1: 01.25rem, pr2: 0.5rem, pr3: 0.75rem, pr4: 1rem, pr5: 1.25rem, pr6: 1.5rem, pr8: 2rem, pr10: 2.5rem, pr12: 3rem, pr16: 4rem, pr20: 5rem, pr24: 6rem, pr32: 8rem, pr40: 10rem, pr48: 1.25rem, pr56: 14rem, pr64: 16rem, prpx: 1px)
+$paddingBottom: (pb0: 0, pb1: 01.25rem, pb2: 0.5rem, pb3: 0.75rem, pb4: 1rem, pb5: 1.25rem, pb6: 1.5rem, pb8: 2rem, pb10: 2.5rem, pb12: 3rem, pb16: 4rem, pb20: 5rem, pb24: 6rem, pb32: 8rem, pb40: 10rem, pb48: 1.25rem, pb56: 14rem, pb64: 16rem, pbpx: 1px)
+
+@media ($md-max)
+    @each $paddingProperty, $paddingValue in $padding
+        .padding-#{$paddingProperty}
+            padding: #{$paddingValue}
+
+@media ($md-max)
+    @each $paddingTopProperty, $paddingTopValue in $paddingTop
+        .paddingTop-#{$paddingTopProperty}
+            padding-top: #{$paddingTopValue}
+
+@media ($md-max)
+    @each $paddingLeftProperty, $paddingLeftValue in $paddingLeft
+        .paddingLeft-#{$paddingLeftProperty}
+            padding-left: #{$paddingLeftValue}
+
+@media ($md-max)
+    @each $paddingRightProperty, $paddingRightValue in $paddingRight
+        .paddingRight-#{$paddingRightProperty}
+            padding-right: #{$paddingRightValue}
+
+@media ($md-max)
+    @each $paddingBottomProperty, $paddingBottomValue in $paddingBottom
+        .paddingBottom-#{$paddingBottomProperty}
+            padding-bottom: #{$paddingBottomValue}
+
+$margin: (m0: 0, m1: 01.25rem, m2: 0.5rem, m3: 0.75rem, m4: 1rem, m5: 1.25rem, m6: 1.5rem, m8: 2rem, m10: 2.5rem, m12: 3rem, m16: 4rem, m20: 5rem, m24: 6rem, m32: 8rem, m40: 10rem, m48: 1.25rem, m56: 14rem, m64: 16rem, mpx: 1px)
+$marginTop: (mt0: 0, mt1: 01.25rem, mt2: 0.5rem, mt3: 0.75rem, mt4: 1rem, mt5: 1.25rem, mt6: 1.5rem, mt8: 2rem, mt10: 2.5rem, mt12: 3rem, mt16: 4rem, mt20: 5rem, mt24: 6rem, mt32: 8rem, mt40: 10rem, mt48: 1.25rem, mt56: 14rem, mt64: 16rem, mtpx: 1px)
+$marginLeft: (ml0: 0, ml1: 01.25rem, ml2: 0.5rem, ml3: 0.75rem, ml4: 1rem, ml5: 1.25rem, ml6: 1.5rem, ml8: 2rem, ml10: 2.5rem, ml12: 3rem, ml16: 4rem, ml20: 5rem, ml24: 6rem, ml32: 8rem, ml40: 10rem, ml48: 1.25rem, ml56: 14rem, ml64: 16rem, mlpx: 1px)
+$marginRight: (mr0: 0, mr1: 01.25rem, mr2: 0.5rem, mr3: 0.75rem, mr4: 1rem, mr5: 1.25rem, mr6: 1.5rem, mr8: 2rem, mr10: 2.5rem, mr12: 3rem, mr16: 4rem, mr20: 5rem, mr24: 6rem, mr32: 8rem, mr40: 10rem, mr48: 1.25rem, mr56: 14rem, mr64: 16rem, mrpx: 1px)
+$marginBottom: (mb0: 0, mb1: 01.25rem, mb2: 0.5rem, mb3: 0.75rem, mb4: 1rem, mb5: 1.25rem, mb6: 1.5rem, mb8: 2rem, mb10: 2.5rem, mb12: 3rem, mb16: 4rem, mb20: 5rem, mb24: 6rem, mb32: 8rem, mb40: 10rem, mb48: 1.25rem, mb56: 14rem, mb64: 16rem, mbpx: 1px)
+
+@media ($md-max)
+    @each $marginProperty, $marginValue in $margin
+        .margin-#{$marginProperty}
+            margin: #{$marginValue}
+
+@media ($md-max)
+    @each $marginTopProperty, $marginTopValue in $marginTop
+        .marginTop-#{$marginTopProperty}
+            margin-top: #{$marginTopValue}
+
+@media ($md-max)
+    @each $marginLeftProperty, $marginLeftValue in $marginLeft
+        .marginLeft-#{$marginLeftProperty}
+            margin-left: #{$marginLeftValue}
+
+@media ($md-max)
+    @each $marginRightProperty, $marginRightValue in $marginRight
+        .marginRight-#{$marginRightProperty}
+            margin-right: #{$marginRightValue}
+
+@media ($md-max)
+    @each $marginBottomProperty, $marginBottomValue in $marginBottom
+        .marginBottom-#{$marginBottomProperty}
+            margin-bottom: #{$marginBottomValue}
