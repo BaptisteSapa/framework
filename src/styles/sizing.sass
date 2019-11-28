@@ -1,57 +1,32 @@
 // ANCHOR ----- width rem
 $widths: (0: 0, 1: .25rem, 2: .5rem, 3: .75rem, 4: 1rem, 5: 1.25rem, 6: 1.5rem, 8: 2rem, 10: 2.5rem, 12: 3rem, 16: 4rem, 20: 5rem, 24: 6rem, 32: 8rem, 40: 10rem, 48: 12rem, 56: 14rem, 64: 16rem, auto: auto, px: 1px, full: 100%, screen: 100vw)
 
+// ANCHOR ----- height
+$heights: (0: 0, 1: .25rem, 2: .5rem, 3: .75rem, 4: 1rem, 5: 1.25rem, 6: 1.5rem, 8: 2rem, 10: 2.5rem, 12: 3rem, 16: 4rem, 20: 5rem, 24: 6rem, 32: 8rem, 40: 10rem, 48: 12rem, 56: 14rem, 64: 16rem, auto: auto, px: 1px, full: 100%, screen: 100vh)
+
 // ANCHOR ----- width %
 $fracWidths : 1.2, 1.3, 2.3, 1.4, 2.4, 3.4, 1.5, 2.5, 3.5, 4.5, 1.6, 2.6, 3.6, 4.6, 5.6, 1.12, 2.12, 3.12, 4.12, 5.12, 6.12, 7.12, 8.12, 9.12, 10.12, 11.12
 
-@media ($md-max)
-	@each $width, $prop in $widths
-        .w-#{$width}
-        	width: #{$prop}
-	@each $frac in $fracWidths
-  		.w-#{str-replace(#{$frac}, '.', '-')}
-    		width: calc( #{str-replace(#{$frac}, '.', ' / ')} * 100%)
-
-@media ($sm-min) and ($md-max)
-	@each $width, $prop in $widths
-        .#{$sm-name}-w-#{$width}
-        	width: #{$prop}
-	@each $frac in $fracWidths
-  		.#{$sm-name}-w-#{str-replace(#{$frac}, '.', '-')}
-    		width: calc( #{str-replace(#{$frac}, '.', ' / ')} * 100%)
-
-@media ($md-min) and ($lg-max)
-	@each $width, $prop in $widths
-        .#{$md-name}-w-#{$width}
-        	width: #{$prop}
-	@each $frac in $fracWidths
-  		.#{$md-name}-w-#{str-replace(#{$frac}, '.', '-')}
-    		width: calc( #{str-replace(#{$frac}, '.', ' / ')} * 100%)
-
-@media ($lg-min) and ($xl-max)
-	@each $width, $prop in $widths
-        .#{$lg-name}-w-#{$width}
-        	width: #{$prop}
-	@each $frac in $fracWidths
-  		.#{$lg-name}-w-#{str-replace(#{$frac}, '.', '-')}
-    		width: calc( #{str-replace(#{$frac}, '.', ' / ')} * 100%)
-
-@media ($xl-min)
-	@each $width, $prop in $widths
-        .#{$xl-name}-w-#{$width}
-        	width: #{$prop}
-	@each $frac in $fracWidths
-  		.#{$xl-name}-w-#{str-replace(#{$frac}, '.', '-')}
-    		width: calc( #{str-replace(#{$frac}, '.', ' / ')} * 100%)
-
 $quarterWidths: (0:0, 1.4:25%, 1.2:50%, 3.4:75%, full:100%)
 
-@each $prop, $value in $quarterWidths
-	.min-w-#{str-replace(#{$prop}, '.', '-')}
+@each $property, $value in $widths
+	.w-#{$property}
+		width: #{$value}
+
+@each $property, $value in $heights
+	.h-#{$property}
+		height: #{$value}
+
+@each $value in $fracWidths
+	.w-#{str-replace(#{$value}, '.', '-')}
+		width: calc( #{str-replace(#{$value}, '.', ' / ')} * 100%)
+
+@each $property, $value in $quarterWidths
+	.min-w-#{str-replace(#{$property}, '.', '-')}
 		min-width: (#{str-replace(#{$value}, '.', ' / ')})
-	.max-w-#{str-replace(#{$prop}, '.', '-')}
-		min-width: (#{str-replace(#{$value}, '.', ' / ')})
-	.min-h-#{str-replace(#{$prop}, '.', '-')}
+	.max-w-#{str-replace(#{$property}, '.', '-')}
+		max-width: (#{str-replace(#{$value}, '.', ' / ')})
+	.min-h-#{str-replace(#{$property}, '.', '-')}
 		min-height: (#{str-replace(#{$value}, '.', ' / ')})
-	.max-h-#{str-replace(#{$prop}, '.', '-')}
+	.max-h-#{str-replace(#{$property}, '.', '-')}
 		min-height: (#{str-replace(#{$value}, '.', ' / ')})

@@ -1,6 +1,6 @@
 // ANCHOR ----- container
 .container
-    width: 90%
+    width: 86%
     margin: 0 auto
     @media ($sm-min)
         max-width: $sm-value
@@ -37,137 +37,35 @@ $visibilities: visible, hidden
 // ANCHOR -- z index
 $indexes: 0, 10, 20, 25, 30, 40, 50, 75, 100, auto, -1
 
-@media ($md-max)
-    @each $display in $displays
-        .#{$display}
-            display: #{$display}
-    @each $fit in $fits
-        .obj-#{$fit}
-            object-fit: #{$fit}
-    @each $position in $positions
-        .obj-#{str-replace(#{$position}, ' ', '-')}
-            object-position: #{$position}
-    @each $ax in $axis
-        @each $overflowProp in $overflowProps
-            .overflow#{$ax}-#{$overflowProp}
-                overflow#{$ax}: #{$overflowProp}
-    @each $pos in $positions
-        .#{$pos}
-            position: #{$pos}
-    @each $side in $sides
-        .#{$side}-0
-            #{$side}: 0
-    @each $visibility in $visibilities
-        .#{$visibility}
-            visibility: #{$visibility}
-    @each $index in $indexes
-        .z-#{$index}
-            z-index: #{$index}
+@each $value in $displays
+    .#{$value}
+        display: #{$value}
 
-@media ($sm-min) and ($md-max)
-    @each $display in $displays
-        .#{$sm-name}-#{$display}
-            display: #{$display}
-    @each $fit in $fits
-        .#{$sm-name}-obj-#{$fit}
-            object-fit: #{$fit}
-    @each $position in $positions
-        .#{$sm-name}-obj-#{str-replace(#{$position}, ' ', '-')}
-            object-position: #{$position}
-    @each $ax in $axis
-        @each $overflowProp in $overflowProps
-            .#{$sm-name}-overflow#{$ax}-#{$overflowProp}
-                overflow#{$ax}: #{$overflowProp}
-    @each $pos in $positions
-        .#{$sm-name}-#{$pos}
-            position: #{$pos}
-    @each $side in $sides
-        #{$sm-name}-#{$side}-0
-            #{$side}: 0
-    @each $visibility in $visibilities
-        .#{$sm-name}-#{$visibility}
-            visibility: #{$visibility}
-    @each $index in $indexes
-        .#{$sm-name}-z-#{$index}
-            z-index: #{$index}
+@each $value in $fits
+    .obj-#{$value}
+        object-fit: #{$value}
 
-@media ($md-min) and ($lg-max)
-    @each $display in $displays
-        .#{$md-name}-#{$display}
-            display: #{$display}
-    @each $fit in $fits
-        .#{$md-name}-obj-#{$fit}
-            object-fit: #{$fit}
-    @each $position in $positions
-        .#{$md-name}-obj-#{str-replace(#{$position}, ' ', '-')}
-            object-position: #{$position}
-    @each $ax in $axis
-        @each $overflowProp in $overflowProps
-            .#{$md-name}-overflow#{$ax}-#{$overflowProp}
-                overflow#{$ax}: #{$overflowProp}
-    @each $pos in $positions
-        .#{$lg-name}-#{$pos}
-            position: #{$pos}
-    @each $side in $sides
-        #{$md-name}-#{$side}-0
-            #{$side}: 0
-    @each $visibility in $visibilities
-        .#{$md-name}-#{$visibility}
-            visibility: #{$visibility}
-    @each $index in $indexes
-        .#{$md-name}-z-#{$index}
-            z-index: #{$index}
+@each $value in $positions
+    .obj-#{$value}
+        object-position: #{$value}
 
-@media ($lg-min) and ($xl-max)
-    @each $display in $displays
-        .#{$lg-name}-#{$display}
-            display: #{$display}
-    @each $fit in $fits
-        .#{$lg-name}-obj-#{$fit}
-            object-fit: #{$fit}
-    @each $position in $positions
-        .#{$lg-name}-obj-#{str-replace(#{$position}, ' ', '-')}
-            object-position: #{$position}
-    @each $ax in $axis
-        @each $overflowProp in $overflowProps
-            .#{$lg-name}-overflow#{$ax}-#{$overflowProp}
-                overflow#{$ax}: #{$overflowProp}
-    @each $pos in $positions
-        .#{$lg-name}-#{$pos}
-            position: #{$pos}
-    @each $side in $sides
-        #{$lg-name}-#{$side}-0
-            #{$side}: 0
-    @each $visibility in $visibilities
-        .#{$lg-name}-#{$visibility}
-            visibility: #{$visibility}
-    @each $index in $indexes
-        .#{$lg-name}-z-#{$index}
-            z-index: #{$index}
+@each $ax in $axis
+    @each $value in $overflowProps
+        .overflow#{$ax}-#{$value}
+            overflow#{$ax}: #{$value}
+    
+@each $value in $positions
+    .#{$value}
+        position: #{$value}
 
-@media ($xl-min)
-    @each $display in $displays
-        .#{$xl-name}-#{$display}
-            display: #{$display}
-    @each $fit in $fits
-        .#{$xl-name}-obj-#{$fit}
-            object-fit: #{$fit}
-    @each $position in $positions
-        .#{$xl-name}-obj-#{str-replace(#{$position}, ' ', '-')}
-            object-position: #{$position}
-    @each $ax in $axis
-        @each $overflowProp in $overflowProps
-            .#{$xl-name}-overflow#{$ax}-#{$overflowProp}
-                overflow#{$ax}: #{$overflowProp}
-    @each $pos in $positions
-        .#{$xl-name}-#{$pos}
-            position: #{$pos}
-    @each $side in $sides
-        #{$xl-name}-#{$side}-0
-            #{$side}: 0
-    @each $visibility in $visibilities
-        .#{$xl-name}-#{$visibility}
-            visibility: #{$visibility}
-    @each $index in $indexes
-        .#{$xl-name}-z-#{$index}
-            z-index: #{$index}
+@each $value in $sides
+    .#{$value}
+        #{$value}: 0
+
+@each $value in $visibilities
+    .#{$value}
+        visibility: #{$value}
+
+@each $value in $indexes
+    .z#{$value}
+        z-index: #{$value}

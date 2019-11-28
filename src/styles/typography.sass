@@ -2,7 +2,7 @@
 $fontFamily: (sans-serif, serif, monospace)
 
 // ANCHOR ----- font size
-$fontSize: (xs: .75rem, sm: .875rem, base: 1rem, lg: 1.125rem, xl: 1.25rem, 2xl: 1.5rem, 3xl: 1.875rem, 4xl: 2.25rem, 5xl: 3rem, 6xl: 4rem)
+$fontSize: (xs: .75rem, sm: .875rem, md: 1rem, lg: 1.125rem, xl: 1.25rem, 2xl: 1.5rem, 3xl: 1.875rem, 4xl: 2.25rem, 5xl: 3rem, 6xl: 4rem)
 
 // ANCHOR ----- font style
 $fontStyle: (italic, normal)
@@ -11,10 +11,10 @@ $fontStyle: (italic, normal)
 $fontWeight: (100, 200, 300, 400, 500, 600, 700, 800, 900)
 
 // ANCHOR ----- letter spacing
-$letterSpacing: (tighter: -0.05em, tight: -0.025em, normal: 0, wide: 0.025em, wider: 0.05em, widest: 0.1em)
+$letterSpacing: (xs: -0.05em, sm: -0.025em, md: 0, lg: 0.025em, xl: 0.05em, 2xl: 0.1em)
 
 // ANCHOR ----- line height
-$lineHeight: (none: 1, tight: 1.25, snug: 1.375, normal: 1.5, relaxed: 1.625, loose: 2)
+$lineHeight: (xs: 1, sm: 1.25, md: 1.375, lg: 1.5, xl: 1.625, 2xl: 2)
 
 // ANCHOR ----- list style
 $listStyle: (none, disc, decimal)
@@ -43,49 +43,62 @@ $verticalAlign: (baseline, top, middle, bottom, text-top, text-bottom)
 // ANCHOR ----- whitespace
 $whitespace: (normal, nowrap, pre, pre-line, pre-wrap)
 
-@media ($md-max)
-    @each $fontFamilyValue in $fontFamily
-        .font-#{$fontFamilyValue}
-            font-family: #{$fontFamilyValue}
-    @each $fontSizeProperty, $fontSizeValue in $fontSize    
-        .font-#{$fontSizeProperty}
-            font-size: #{$fontSizeValue}
-    @each $fontStyleValue in $fontStyle
-        .font-#{$fontStyleValue}
-            font-style: #{$fontStyleValue}
-    @each $fontWeightValue in $fontWeight
-        .font-#{$fontWeightValue}
-            font-weight: #{$fontWeightValue}
-    @each $letterSpacingProperty, $letterSpacingValue in $letterSpacing
-        .letter-#{$letterSpacingProperty}
-            letter-spacing: #{$letterSpacingValue}
-    @each $lineHeightProperty, $lineHeightValue in $lineHeight
-        .line-#{$lineHeightProperty}
-            line-height: #{$lineHeightValue}
-    @each $listStyleValue in $listStyle
-        .list-#{$listStyleValue}
-            list-style-type: #{$listStyleValue}
-    @each $listPositionValue in $listPosition
-        .list-#{$listPositionValue}
-            list-style-position: #{$listPositionValue}
-    @each $placeholderProperty, $placeholderValue in $placeholder
-        .placeholder-#{$placeholderProperty}::placeholder
-            color: #{$placeholderValue}
-    @each $textAlignValue in $textAlign
-        .text-#{$textAlignValue}
-            text-align: #{$textAlignValue}
-    @each $textColorProperty, $textColorValue in $textColor
-        .text-#{$textColorProperty}
-            color: #{$textColorValue}
-    @each $textDecorationValue in $textDecoration
-        .text-#{$textDecorationValue}
-            text-decoration: #{$textDecorationValue}
-    @each $textTransformValue in $textTransform
-        .text-#{$textTransformValue}
-            text-transform: #{$textTransformValue}
-    @each $verticalAlignValue in $verticalAlign
-        .vertical-align-#{$verticalAlignValue}
-            vertical-align: #{$verticalAlignValue}
-    @each $whitespaceValue in $whitespace
-        .whitespace-#{$whitespaceValue}
-            white-space: #{$whitespaceValue}
+@each $value in $fontFamily
+    .#{$value}
+        font-family: #{$value}
+
+@each $property, $value in $fontSize    
+    .font-#{$property}
+        font-size: #{$value}
+
+@each $value in $fontStyle
+    .#{$value}
+        font-style: #{$value}
+
+@each $value in $fontWeight
+    .font-#{$value}
+        font-weight: #{$value}
+
+@each $property, $value in $letterSpacing
+    .letter-#{$property}
+        letter-spacing: #{$value}
+
+@each $property, $value in $lineHeight
+    .line-#{$property}
+        line-height: #{$value}
+
+@each $value in $listStyle
+    .list-#{$value}
+        list-style-type: #{$value}
+
+@each $value in $listPosition
+    .list-#{$value}
+        list-style-position: #{$value}
+
+@each $property, $value in $placeholder
+    .placeholder-#{$property}::placeholder
+        color: #{$value}
+
+@each $value in $textAlign
+    .text-#{$value}
+        text-align: #{$value}
+
+@each $property, $value in $textColor
+    .#{$property}
+        color: #{$value}
+
+@each $value in $textDecoration
+    .decoration-#{$value}
+        text-decoration: #{$value}
+
+@each $value in $textTransform
+    .transform-#{$value}
+        text-transform: #{$value}
+
+@each $value in $verticalAlign
+    .vertical-#{$value}
+        vertical-align: #{$value}
+
+@each $value in $whitespace
+    .whitespace-#{$value}
+        white-space: #{$value}

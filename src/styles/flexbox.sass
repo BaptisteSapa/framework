@@ -28,162 +28,42 @@ $flexShrink: (1, 0)
 // ANCHOR ----- order
 $order: (first: -9999, last: 9999, none: none, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12)
 
-@media ($md-max)
-	@each $flexDirectionValue in $flexDirection
-		.flex-#{$flexDirectionValue}
-			flex-direction: #{$flexDirectionValue}
-	@each $flexWrapValue in $flexWrap
-		.flex-#{$flexWrapValue}
-			flex-wrap: #{$flexWrapValue}
-	@each $alignItemsValue in $alignItems
-		.items-#{$alignItemsValue}
-			align-items: #{$alignItemsValue}
-	@each $alignContentValue in $alignContent
-		.content-#{$alignContentValue}
-			align-content: #{$alignContentValue}
-	@each $alignSelfValue in $alignSelf
-		.self-#{$alignSelfValue}
-			align-self: #{$alignSelfValue}
-	@each $justifyContentValue in $justifyContent
-		.justify-#{$justifyContentValue}
-			justify-content: #{$justifyContentValue}
-	@each $flexProperty, $flexValue in $flex
-		.flex-#{$flexProperty}
-			flex: #{$flexValue}
-	@each $flexGrowValue in $flexGrow
-		.flex-grow-#{$flexGrowValue}
-			flex-grow: #{$flexGrowValue}
-	@each $flexShrinkValue in $flexShrink
-		.flex-shrink-#{$flexShrinkValue}
-			flex-shrink: #{$flexShrinkValue}
-	@each $orderProperty, $orderValue in $order
-		.order-#{$orderProperty}
-			order: #{$orderValue}
+@each $value in $flexDirection
+	.#{$value}
+		flex-direction: #{$value}
+		
+@each $value in $flexWrap
+	.#{$value}
+		flex-wrap: #{$value}
 
-@media ($sm-min) and ($md-max)
-	@each $flexDirectionValue in $flexDirection
-		.#{$sm-name}-flex-#{$flexDirectionValue}
-			flex-direction: #{$flexDirectionValue}
-	@each $flexWrapValue in $flexWrap
-		.#{$sm-name}-flex-#{$flexWrapValue}
-			flex-wrap: #{$flexWrapValue}
-	@each $alignItemsValue in $alignItems
-		.#{$sm-name}-items-#{$alignItemsValue}
-			align-items: #{$alignItemsValue}
-	@each $alignContentValue in $alignContent
-		.#{$sm-name}-content-#{$alignContentValue}
-			align-content: #{$alignContentValue}
-	@each $alignSelfValue in $alignSelf
-		.#{$sm-name}-self-#{$alignSelfValue}
-			align-self: #{$alignSelfValue}
-	@each $justifyContentValue in $justifyContent
-		.#{$sm-name}-justify-#{$justifyContentValue}
-			justify-content: #{$justifyContentValue}
-	@each $flexProperty, $flexValue in $flex
-		.#{$sm-name}-flex-#{$flexProperty}
-			flex: #{$flexValue}
-	@each $flexGrowValue in $flexGrow
-		.#{$sm-name}-flex-grow-#{$flexGrowValue}
-			flex-grow: #{$flexGrowValue}
-	@each $flexShrinkValue in $flexShrink
-		.#{$sm-name}-flex-shrink-#{$flexShrinkValue}
-			flex-shrink: #{$flexShrinkValue}
-	@each $orderProperty, $orderValue in $order
-		.#{$sm-name}-order-#{$orderProperty}
-			order: #{$orderValue}
+@each $value in $alignItems
+	.items-#{$value}
+		align-items: #{$value}
 
-@media ($md-min) and ($lg-max)
-	@each $flexDirectionValue in $flexDirection
-		.#{$md-name}-flex-#{$flexDirectionValue}
-			flex-direction: #{$flexDirectionValue}
-	@each $flexWrapValue in $flexWrap
-		.#{$md-name}-flex-#{$flexWrapValue}
-			flex-wrap: #{$flexWrapValue}
-	@each $alignItemsValue in $alignItems
-		.#{$md-name}-items-#{$alignItemsValue}
-			align-items: #{$alignItemsValue}
-	@each $alignContentValue in $alignContent
-		.#{$md-name}-content-#{$alignContentValue}
-			align-content: #{$alignContentValue}
-	@each $alignSelfValue in $alignSelf
-		.#{$md-name}-self-#{$alignSelfValue}
-			align-self: #{$alignSelfValue}
-	@each $justifyContentValue in $justifyContent
-		.#{$md-name}-justify-#{$justifyContentValue}
-			justify-content: #{$justifyContentValue}
-	@each $flexProperty, $flexValue in $flex
-		.#{$md-name}-flex-#{$flexProperty}
-			flex: #{$flexValue}
-	@each $flexGrowValue in $flexGrow
-		.#{$md-name}-flex-grow-#{$flexGrowValue}
-			flex-grow: #{$flexGrowValue}
-	@each $flexShrinkValue in $flexShrink
-		.#{$md-name}-flex-shrink-#{$flexShrinkValue}
-			flex-shrink: #{$flexShrinkValue}
-	@each $orderProperty, $orderValue in $order
-		.#{$md-name}-order-#{$orderProperty}
-			order: #{$orderValue}
+@each $value in $alignContent
+	.content-#{$value}
+		align-content: #{$value}
 
-@media ($lg-min) and ($xl-max)
-	@each $flexDirectionValue in $flexDirection
-		.#{$lg-name}-flex-#{$flexDirectionValue}
-			flex-direction: #{$flexDirectionValue}
-	@each $flexWrapValue in $flexWrap
-		.#{$lg-name}-flex-#{$flexWrapValue}
-			flex-wrap: #{$flexWrapValue}
-	@each $alignItemsValue in $alignItems
-		.#{$lg-name}-items-#{$alignItemsValue}
-			align-items: #{$alignItemsValue}
-	@each $alignContentValue in $alignContent
-		.#{$lg-name}-content-#{$alignContentValue}
-			align-content: #{$alignContentValue}
-	@each $alignSelfValue in $alignSelf
-		.#{$lg-name}-self-#{$alignSelfValue}
-			align-self: #{$alignSelfValue}
-	@each $justifyContentValue in $justifyContent
-		.#{$lg-name}-justify-#{$justifyContentValue}
-			justify-content: #{$justifyContentValue}
-	@each $flexProperty, $flexValue in $flex
-		.#{$lg-name}-flex-#{$flexProperty}
-			flex: #{$flexValue}
-	@each $flexGrowValue in $flexGrow
-		.#{$lg-name}-flex-grow-#{$flexGrowValue}
-			flex-grow: #{$flexGrowValue}
-	@each $flexShrinkValue in $flexShrink
-		.#{$lg-name}-flex-shrink-#{$flexShrinkValue}
-			flex-shrink: #{$flexShrinkValue}
-	@each $orderProperty, $orderValue in $order
-		.#{$lg-name}-order-#{$orderProperty}
-			order: #{$orderValue}
+@each $value in $alignSelf
+	.self-#{$value}
+		align-self: #{$value}
 
-@media ($xl-min)
-	@each $flexDirectionValue in $flexDirection
-		.#{$xl-name}-flex-#{$flexDirectionValue}
-			flex-direction: #{$flexDirectionValue}
-	@each $flexWrapValue in $flexWrap
-		.#{$xl-name}-flex-#{$flexWrapValue}
-			flex-wrap: #{$flexWrapValue}
-	@each $alignItemsValue in $alignItems
-		.#{$xl-name}-items-#{$alignItemsValue}
-			align-items: #{$alignItemsValue}
-	@each $alignContentValue in $alignContent
-		.#{$xl-name}-content-#{$alignContentValue}
-			align-content: #{$alignContentValue}
-	@each $alignSelfValue in $alignSelf
-		.#{$xl-name}-self-#{$alignSelfValue}
-			align-self: #{$alignSelfValue}
-	@each $justifyContentValue in $justifyContent
-		.#{$xl-name}-justify-#{$justifyContentValue}
-			justify-content: #{$justifyContentValue}
-	@each $flexProperty, $flexValue in $flex
-		.#{$xl-name}-flex-#{$flexProperty}
-			flex: #{$flexValue}
-	@each $flexGrowValue in $flexGrow
-		.#{$xl-name}-flex-grow-#{$flexGrowValue}
-			flex-grow: #{$flexGrowValue}
-	@each $flexShrinkValue in $flexShrink
-		.#{$xl-name}-flex-shrink-#{$flexShrinkValue}
-			flex-shrink: #{$flexShrinkValue}
-	@each $orderProperty, $orderValue in $order
-		.#{$xl-name}-order-#{$orderProperty}
-			order: #{$orderValue}
+@each $value in $justifyContent
+	.justify-#{$value}
+		justify-content: #{$value}
+
+@each $property, $value in $flex
+	.flex-#{$property}
+		flex: #{$value}
+
+@each $value in $flexGrow
+	.grow-#{$value}
+		flex-grow: #{$value}
+
+@each $value in $flexShrink
+	.shrink-#{$value}
+		flex-shrink: #{$value}
+
+@each $property, $value in $order
+	.order-#{$property}
+		order: #{$value}
