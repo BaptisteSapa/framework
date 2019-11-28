@@ -1,0 +1,26 @@
+$cursors: auto, default, pointer, wait, text, move, not-allowed
+
+@each $prop in $cursors
+    .cursor-#{$prop}
+        cursor: #{$prop}
+
+$pointerEvents: none, auto
+
+@each $prop in $pointerEvents
+    .pointer-events-#{$prop}
+        pointer-events: #{$prop}
+
+$resises: none, both, vertical, horizontal
+
+@each $prop in $resises
+    .resize-#{$prop}
+        resize: #{$prop}
+
+$userSelects: none, text, all, auto
+
+@each $prop in $userSelects
+    .select-#{$prop}
+        user-select: #{$prop}
+
+.outline-none
+    outline: 0
