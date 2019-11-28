@@ -1,26 +1,26 @@
 $cursors: auto, default, pointer, wait, text, move, not-allowed
 
-@each $prop in $cursors
-    .cursor-#{$prop}
-        cursor: #{$prop}
+@each $value in $cursors
+    .cursor-#{$value}
+        cursor: #{$value}
 
 $pointerEvents: none, auto
 
-@each $prop in $pointerEvents
-    .pointer-events-#{$prop}
-        pointer-events: #{$prop}
+@each $value in $pointerEvents
+    .event-#{$value}
+        pointer-events: #{$value}
 
 $resises: none, both, vertical, horizontal
 
-@each $prop in $resises
-    .resize-#{$prop}
-        resize: #{$prop}
+@each $value in $resises
+    .resize-#{$value}
+        resize: #{$value}
 
 $userSelects: none, text, all, auto
 
-@each $prop in $userSelects
-    .select-#{$prop}
-        user-select: #{$prop}
+@each $value in $userSelects
+    .select-#{$value}
+        user-select: #{$value}
 
 .outline-none
     outline: 0
