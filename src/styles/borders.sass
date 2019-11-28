@@ -10,7 +10,7 @@ $borderStyle: (border-solid: solid, border-dashed: dashed, border-dotted: dotted
 
 @media ($md-max)
     @each $borderStyleProperty, $borderStyleValue in $borderStyle
-        .borderStyle-#{$borderStyleProperty}
+        .bs-#{$borderStyleProperty}
             border-style: #{$borderStyleValue}
 
 // WIDTH
@@ -18,13 +18,13 @@ $borderWidth: (border: 1px, border-0: 0, border-2: 2px, border-4: 4px, border-8:
 
 @media ($md-max)
     @each $borderWidthProperty, $borderWidthValue in $borderWidth
-        .borderWidth-#{$borderWidthProperty}
+        .bw-#{$borderWidthProperty}
             border-width: #{$borderWidthValue}
 
 // ROUNDED
-$borderRounded: (border-none: 0, border-sm: 0.125rem, border-md: 0.25rem, border-lg: 0.5rem, border-full: 9999px)
+$borderRounded: (none: 0, sm: 0.125rem, md: 0.25rem, lg: 0.5rem, full: 9999px)
 
 @media ($md-max)
     @each $borderRoundedProperty, $borderRoundedValue in $borderRounded
-        .borderRounded-#{$borderRoundedProperty}
-            border-rounded: #{$borderRoundedValue}
+        .br-#{$borderRoundedProperty}
+            border-radius: #{$borderRoundedValue}
