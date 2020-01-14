@@ -1,71 +1,23 @@
-// ANCHOR ----- container
-.container
-    width: 86%
-    margin: 0 auto
-    @media ($sm-min)
-        max-width: $sm-value
-    @media ($md-min)
-        max-width: $md-value
-    @media ($lg-min)
-        max-width: $lg-value
-    @media ($xl-min) 
-        max-width: $xl-value
-    &-full
-        width: 100%
-
-// ANCHOR ----- display
+// ----- display
 $displays: block, inline-block, inline, flex, inline-flex, none
 
-// ANCHOR ----- object fit
+// ----- object fit
 $fits: contain, cover, fill, scale-down, none
 
-// ANCHOR ----- object position
+// ----- object position
 $positions: bottom, center, left, left bottom, left top, right, right bottom, right top, top
 
-// ANCHOR ----- overflow
+// ----- overflow
 $overflowProps: auto, hidden, visible, scroll
 
-// ANCHOR ----- position
+// ----- position
 $positions: static, fixed, absolute, relative, sticky
 
-// ANCHOR -- top right bottom left
+// ----- top right bottom left
 $sides: top, right, bottom, left
 
-// ANCHOR -- visibility
+// ----- visibility
 $visibilities: visible, hidden
 
-// ANCHOR -- z index
+// ----- z index
 $indexes: 0, 10, 20, 25, 30, 40, 50, 75, 100, auto, -1
-
-@each $value in $displays
-    .#{$value}
-        display: #{$value}
-
-@each $value in $fits
-    .obj-#{$value}
-        object-fit: #{$value}
-
-@each $value in $positions
-    .obj-#{$value}
-        object-position: #{$value}
-
-@each $ax in $axis
-    @each $value in $overflowProps
-        .overflow#{$ax}-#{$value}
-            overflow#{$ax}: #{$value}
-    
-@each $value in $positions
-    .#{$value}
-        position: #{$value}
-
-@each $value in $sides
-    .#{$value}
-        #{$value}: 0
-
-@each $value in $visibilities
-    .#{$value}
-        visibility: #{$value}
-
-@each $value in $indexes
-    .z#{$value}
-        z-index: #{$value}

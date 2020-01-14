@@ -1,69 +1,29 @@
-// ANCHOR ----- flex direction
+// ----- flex direction
 $flexDirection: (row, row-reverse, column, column-reverse)
 
-// ANCHOR ----- flex wrap
+// ----- flex wrap
 $flexWrap: (nowrap, wrap, wrap-reverse)
 
-// ANCHOR ----- align items
+// ----- align items
 $alignItems: (stretch, flex-start, center, flex-end, baseline)
 
-// ANCHOR ----- align content
+// ----- align content
 $alignContent: (flex-start, center, flex-end, space-between, space-around)
 
-// ANCHOR ----- align self
+// ----- align self
 $alignSelf: (auto, flex-start, center, flex-end, stretch)
 
-// ANCHOR ----- justify content
+// ----- justify content
 $justifyContent: (flex-start, center, flex-end, space-between, space-around)
 
-// ANCHOR ----- flex
+// ----- flex
 $flex: (initial: 0 1 auto, 1: 1 1 0%, auto: 1 1 auto, none: none)
 
-// ANCHOR ----- flex grow
+// ----- flex grow
 $flexGrow: (1, 0)
 
-// ANCHOR ----- flex shrink
+// ----- flex shrink
 $flexShrink: (1, 0)
 
-// ANCHOR ----- order
+// ----- order
 $order: (first: -9999, last: 9999, none: none, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12)
-
-@each $value in $flexDirection
-	.#{$value}
-		flex-direction: #{$value}
-		
-@each $value in $flexWrap
-	.#{$value}
-		flex-wrap: #{$value}
-
-@each $value in $alignItems
-	.items-#{$value}
-		align-items: #{$value}
-
-@each $value in $alignContent
-	.content-#{$value}
-		align-content: #{$value}
-
-@each $value in $alignSelf
-	.self-#{$value}
-		align-self: #{$value}
-
-@each $value in $justifyContent
-	.justify-#{$value}
-		justify-content: #{$value}
-
-@each $property, $value in $flex
-	.flex-#{$property}
-		flex: #{$value}
-
-@each $value in $flexGrow
-	.grow-#{$value}
-		flex-grow: #{$value}
-
-@each $value in $flexShrink
-	.shrink-#{$value}
-		flex-shrink: #{$value}
-
-@each $property, $value in $order
-	.order-#{$property}
-		order: #{$value}

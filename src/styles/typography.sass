@@ -1,104 +1,26 @@
-// ANCHOR ----- font family
-$fontFamily: (sans-serif, serif, monospace)
-
-// ANCHOR ----- font size
-$fontSize: (xs: .75rem, sm: .875rem, md: 1rem, lg: 1.125rem, xl: 1.25rem, 2xl: 1.5rem, 3xl: 1.875rem, 4xl: 2.25rem, 5xl: 3rem, 6xl: 4rem)
-
-// ANCHOR ----- font style
+// ----- font style
 $fontStyle: (italic, normal)
 
-// ANCHOR ----- font weight
+// ----- font weight
 $fontWeight: (100, 200, 300, 400, 500, 600, 700, 800, 900)
 
-// ANCHOR ----- letter spacing
-$letterSpacing: (xs: -0.05em, sm: -0.025em, md: 0, lg: 0.025em, xl: 0.05em, 2xl: 0.1em)
-
-// ANCHOR ----- line height
-$lineHeight: (xs: 1, sm: 1.25, md: 1.375, lg: 1.5, xl: 1.625, 2xl: 2)
-
-// ANCHOR ----- list style
+// ----- list style
 $listStyle: (none, disc, decimal)
 
-// ANCHOR ----- list position
+// ----- list position
 $listPosition: (inside, outside)
 
-// ANCHOR ----- placeholder
-$placeholder: (transparent: transparent, black: #000, white: #fff, gray-100 : #f7fafc, gray-200 : #edf2f7, gray-300 : #e2e8f0, gray-400 : #cbd5e0, gray-500 : #a0aec0, gray-600 : #718096, gray-700 : #4a5568, gray-800 : #2d3748, gray-900 : #1a202c, red-100 : #fff5f5, red-200 : #fed7d7, red-300 : #feb2b2, red-400 : #fc8181, red-500 : #f56565, red-600 : #e53e3e, red-700 : #c53030, red-800 : #9b2c2c, red-900 : #742a2a, orange-100 : #fffaf0, orange-200 : #feebc8, orange-300 : #fbd38d, orange-400 : #f6ad55, orange-500 : #ed8936, orange-600 : #dd6b20, orange-700 : #c05621, orange-800 : #9c4221, orange-900 : #7b341e, yellow-100 : #fffff0, yellow-200 : #fefcbf, yellow-300 : #faf089, yellow-400 : #f6e05e, yellow-500 : #ecc94b, yellow-600 : #d69e2e, yellow-700 : #b7791f, yellow-800 : #975a16, yellow-900 : #744210, green-100 : #f0fff4, green-200 : #c6f6d5, green-300 : #9ae6b4, green-400 : #68d391, green-500 : #48bb78, green-600 : #38a169, green-700 : #2f855a, green-800 : #276749, green-900 : #22543d, teal-100 : #e6fffa, teal-200 : #b2f5ea, teal-300 : #81e6d9, teal-400 : #4fd1c5, teal-500 : #38b2ac, teal-600 : #319795, teal-700 : #2c7a7b, teal-800 : #285e61, teal-900 : #234e52, blue-100 : #ebf8ff, blue-200 : #bee3f8, blue-300 : #90cdf4, blue-400 : #63b3ed, blue-500 : #4299e1, blue-600 : #3182ce, blue-700 : #2b6cb0, blue-800 : #2c5282, blue-900 : #2a4365, indigo-100 : #ebf4ff, indigo-200 : #c3dafe, indigo-300 : #a3bffa, indigo-400 : #7f9cf5, indigo-500 : #667eea, indigo-600 : #5a67d8, indigo-700 : #4c51bf, indigo-800 : #434190, indigo-900 : #3c366b, purple-100 : #faf5ff, purple-200 : #e9d8fd, purple-300 : #d6bcfa, purple-400 : #b794f4, purple-500 : #9f7aea, purple-600 : #805ad5, purple-700 : #6b46c1, purple-800 : #553c9a, purple-900 : #44337a, pink-100 : #fff5f7, pink-200 : #fed7e2, pink-300 : #fbb6ce, pink-400 : #f687b3, pink-500 : #ed64a6, pink-600 : #d53f8c, pink-700 : #b83280, pink-800 : #97266d, pink-900 : #702459)
-
-// ANCHOR ----- text align
+// ----- text align
 $textAlign: (left, center, right, justify)
 
-// ANCHOR ----- text color
-$textColor: (transparent: transparent, black: #000, white: #fff, gray-100 : #f7fafc, gray-200 : #edf2f7, gray-300 : #e2e8f0, gray-400 : #cbd5e0, gray-500 : #a0aec0, gray-600 : #718096, gray-700 : #4a5568, gray-800 : #2d3748, gray-900 : #1a202c, red-100 : #fff5f5, red-200 : #fed7d7, red-300 : #feb2b2, red-400 : #fc8181, red-500 : #f56565, red-600 : #e53e3e, red-700 : #c53030, red-800 : #9b2c2c, red-900 : #742a2a, orange-100 : #fffaf0, orange-200 : #feebc8, orange-300 : #fbd38d, orange-400 : #f6ad55, orange-500 : #ed8936, orange-600 : #dd6b20, orange-700 : #c05621, orange-800 : #9c4221, orange-900 : #7b341e, yellow-100 : #fffff0, yellow-200 : #fefcbf, yellow-300 : #faf089, yellow-400 : #f6e05e, yellow-500 : #ecc94b, yellow-600 : #d69e2e, yellow-700 : #b7791f, yellow-800 : #975a16, yellow-900 : #744210, green-100 : #f0fff4, green-200 : #c6f6d5, green-300 : #9ae6b4, green-400 : #68d391, green-500 : #48bb78, green-600 : #38a169, green-700 : #2f855a, green-800 : #276749, green-900 : #22543d, teal-100 : #e6fffa, teal-200 : #b2f5ea, teal-300 : #81e6d9, teal-400 : #4fd1c5, teal-500 : #38b2ac, teal-600 : #319795, teal-700 : #2c7a7b, teal-800 : #285e61, teal-900 : #234e52, blue-100 : #ebf8ff, blue-200 : #bee3f8, blue-300 : #90cdf4, blue-400 : #63b3ed, blue-500 : #4299e1, blue-600 : #3182ce, blue-700 : #2b6cb0, blue-800 : #2c5282, blue-900 : #2a4365, indigo-100 : #ebf4ff, indigo-200 : #c3dafe, indigo-300 : #a3bffa, indigo-400 : #7f9cf5, indigo-500 : #667eea, indigo-600 : #5a67d8, indigo-700 : #4c51bf, indigo-800 : #434190, indigo-900 : #3c366b, purple-100 : #faf5ff, purple-200 : #e9d8fd, purple-300 : #d6bcfa, purple-400 : #b794f4, purple-500 : #9f7aea, purple-600 : #805ad5, purple-700 : #6b46c1, purple-800 : #553c9a, purple-900 : #44337a, pink-100 : #fff5f7, pink-200 : #fed7e2, pink-300 : #fbb6ce, pink-400 : #f687b3, pink-500 : #ed64a6, pink-600 : #d53f8c, pink-700 : #b83280, pink-800 : #97266d, pink-900 : #702459)
-
-// ANCHOR ----- text decoration
+// ----- text decoration
 $textDecoration: (underline, line-through, none)
 
-// ANCHOR ----- text transform
+// ----- text transform
 $textTransform: (uppercase, lowercase, capitalize, none)
 
-// ANCHOR ----- vertical align
+// ----- vertical align
 $verticalAlign: (baseline, top, middle, bottom, text-top, text-bottom)
 
-// ANCHOR ----- whitespace
+// ----- whitespace
 $whitespace: (normal, nowrap, pre, pre-line, pre-wrap)
-
-@each $value in $fontFamily
-    .#{$value}
-        font-family: #{$value}
-
-@each $property, $value in $fontSize    
-    .font-#{$property}
-        font-size: #{$value}
-
-@each $value in $fontStyle
-    .#{$value}
-        font-style: #{$value}
-
-@each $value in $fontWeight
-    .font-#{$value}
-        font-weight: #{$value}
-
-@each $property, $value in $letterSpacing
-    .letter-#{$property}
-        letter-spacing: #{$value}
-
-@each $property, $value in $lineHeight
-    .line-#{$property}
-        line-height: #{$value}
-
-@each $value in $listStyle
-    .list-#{$value}
-        list-style-type: #{$value}
-
-@each $value in $listPosition
-    .list-#{$value}
-        list-style-position: #{$value}
-
-@each $property, $value in $placeholder
-    .placeholder-#{$property}::placeholder
-        color: #{$value}
-
-@each $value in $textAlign
-    .text-#{$value}
-        text-align: #{$value}
-
-@each $property, $value in $textColor
-    .#{$property}
-        color: #{$value}
-
-@each $value in $textDecoration
-    .decoration-#{$value}
-        text-decoration: #{$value}
-
-@each $value in $textTransform
-    .transform-#{$value}
-        text-transform: #{$value}
-
-@each $value in $verticalAlign
-    .vertical-#{$value}
-        vertical-align: #{$value}
-
-@each $value in $whitespace
-    .whitespace-#{$value}
-        white-space: #{$value}
