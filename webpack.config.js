@@ -68,7 +68,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: './styles/style.css'
+            filename: './styles/piodjio.css'
         }),
         new HtmlWebpackPlugin({
             title: 'Homepage',
