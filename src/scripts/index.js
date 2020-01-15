@@ -1,15 +1,2 @@
-// ---------------------------------------- //
-//      ANCHOR -- require and imports
-// ---------------------------------------- //
-
-
-
-// ---------------------------------------- //
-//      ANCHOR -- dom ready (just need to load the files)
-// ---------------------------------------- //
-
-document.addEventListener('DOMContentLoaded', () => {
-
-
-
-})
+// ----- require and imports
+import piodjio from '../styles/piodjio.sass'

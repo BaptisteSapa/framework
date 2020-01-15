@@ -1,0 +1,690 @@
+@each $value in $displays
+    .#{$value}
+        display: #{$value}
+@each $value in $fits
+    .obj-#{$value}
+        object-fit: #{$value}
+@each $value in $positions
+    .obj-#{$value}
+        object-position: #{$value}
+@each $ax in $axis
+    @each $value in $overflowProps
+        .overflow#{$ax}-#{$value}
+            overflow#{$ax}: #{$value}
+@each $value in $positions
+    .#{$value}
+        position: #{$value}
+@each $value in $sides
+    .#{$value}
+        #{$value}: 0
+@each $value in $visibilities
+    .#{$value}
+        visibility: #{$value}
+@each $value in $indexes
+    .z#{$value}
+        z-index: #{$value}
+@each $value in $flexDirection
+    .#{$value}
+        flex-direction: #{$value}
+@each $value in $flexWrap
+    .#{$value}
+        flex-wrap: #{$value}
+@each $value in $alignItems
+    .items-#{$value}
+        align-items: #{$value}
+@each $value in $alignContent
+    .content-#{$value}
+        align-content: #{$value}
+@each $value in $alignSelf
+    .self-#{$value}
+        align-self: #{$value}
+@each $value in $justifyContent
+    .justify-#{$value}
+        justify-content: #{$value}
+@each $property, $value in $flex
+    .flex-#{$property}
+        flex: #{$value}
+@each $value in $flexGrow
+    .grow-#{$value}
+        flex-grow: #{$value}
+@each $value in $flexShrink
+    .shrink-#{$value}
+        flex-shrink: #{$value}
+@each $property, $value in $order
+    .order-#{$property}
+        order: #{$value}
+@each $property, $value in $widths
+    .w-#{$property}
+        width: #{$value}
+@each $property, $value in $heights
+    .h-#{$property}
+        height: #{$value}
+@each $value in $fracWidths
+    .w-#{str-replace(#{$value}, '.', '-')}
+        width: calc( #{str-replace(#{$value}, '.', ' / ')} * 100%)
+@each $property, $value in $quarterWidths
+    .min-w-#{str-replace(#{$property}, '.', '-')}
+        min-width: (#{str-replace(#{$value}, '.', ' / ')})
+    .max-w-#{str-replace(#{$property}, '.', '-')}
+        max-width: (#{str-replace(#{$value}, '.', ' / ')})
+    .min-h-#{str-replace(#{$property}, '.', '-')}
+        min-height: (#{str-replace(#{$value}, '.', ' / ')})
+    .max-h-#{str-replace(#{$property}, '.', '-')}
+        min-height: (#{str-replace(#{$value}, '.', ' / ')})
+@each $property, $value in $spacing
+    .p-#{$property}
+        padding: #{$value}
+    .pt-#{$property}
+        padding-top: #{$value}
+    .pr-#{$property}
+        padding-right: #{$value}
+    .pb-#{$property}
+        padding-bottom: #{$value}
+    .pl-#{$property}
+        padding-left: #{$value}
+    .ptb-#{$property}
+        padding-top: #{$value}
+        padding-bottom: #{$value}
+    .prl-#{$property}
+        padding-right: #{$value}
+        padding-left: #{$value}
+    .m-#{$property}
+        margin: #{$value}
+    .mt-#{$property}
+        margin-top: #{$value}
+    .mr-#{$property}
+        margin-right: #{$value}
+    .mb-#{$property}
+        margin-bottom: #{$value}
+    .ml-#{$property}
+        margin-left: #{$value}
+    .mtb-#{$property}
+        margin-top: #{$value}
+        margin-bottom: #{$value}
+    .mrl-#{$property}
+        margin-right: #{$value}
+        margin-left: #{$value}
+@each $property, $value in $fontFamily
+    .#{$property}
+        font-family: #{$value}
+@each $property, $value in $fontSize    
+    .font-#{$property}
+        font-size: #{$value}
+@each $value in $fontStyle
+    .#{$value}
+        font-style: #{$value}
+@each $value in $fontWeight
+    .font-#{$value}
+        font-weight: #{$value}
+@each $property, $value in $letterSpacing
+    .letter-#{$property}
+        letter-spacing: #{$value}
+@each $property, $value in $lineHeight
+    .line-#{$property}
+        line-height: #{$value}
+@each $value in $listStyle
+    .list-#{$value}
+        list-style-type: #{$value}
+@each $value in $listPosition
+    .list-#{$value}
+        list-style-position: #{$value}
+@each $property, $value in $colors
+    .placeholder-#{$property}::placeholder
+        color: #{$value}
+@each $value in $textAlign
+    .text-#{$value}
+        text-align: #{$value}
+@each $property, $value in $colors
+    .#{$property}
+        color: #{$value}
+@each $value in $textDecoration
+    .decoration-#{$value}
+        text-decoration: #{$value}
+@each $value in $textTransform
+    .transform-#{$value}
+        text-transform: #{$value}
+@each $value in $verticalAlign
+    .vertical-#{$value}
+        vertical-align: #{$value}
+@each $value in $whitespace
+    .whitespace-#{$value}
+        white-space: #{$value}
+@each $property, $value in $colors
+    .border-#{$property}
+        border-color: #{$value}
+@each $value in $borderStyle
+    .border-#{$value}
+        border-style: #{$value}
+@each $borderWidthProperty, $borderWidthValue in $borderWidth
+    .#{$borderWidthProperty}
+        border-width: #{$borderWidthValue}
+@each $property, $value in $borderRounded
+    .radius-#{$property}
+        border-radius: #{$value}
+@each $value in $backgroundAttachment
+    .bg-#{$value}
+        background-attachment: #{$value}
+@each $value in $backgroundPosition
+    .bg-#{str-replace(#{$value}, ' ', '-')}
+        background-attachment: #{$value}
+@each $value in $backgroundRepeat
+    .bg-#{$value}
+        background-repeat: #{$value}
+@each $value in $backgroundSize
+    .bg-#{$value}
+        background-size: #{$value}
+@each $property, $value in $colors
+    .bg-#{$property}
+        background-color: #{$value}
+.bg-center
+    background-position: center center
+@each $property, $value in $opacity
+    .opacity-#{$property}
+        opacity: #{$value}
+@each $property, $value in $shadow
+    .shadow-#{$property}
+        box-shadow: #{$value}
+@each $value in $cursors
+    .cursor-#{$value}
+        cursor: #{$value}
+@each $value in $pointerEvents
+    .event-#{$value}
+        pointer-events: #{$value}
+@each $value in $resises
+    .resize-#{$value}
+        resize: #{$value}
+@each $value in $userSelects
+    .select-#{$value}
+        user-select: #{$value}
+.outline-none
+    outline: 0
+
+@media all and ($xs-min) and ($sm-min)
+    @each $value in $displays
+        .#{$xs-name}-#{$value}
+            display: #{$value}
+    @each $value in $positions
+        .#{$xs-name}-#{$value}
+            position: #{$value}
+    @each $value in $visibilities
+        .#{$xs-name}-#{$value}
+            visibility: #{$value}
+    @each $value in $indexes
+        .#{$xs-name}-z#{$value}
+            z-index: #{$value}
+    @each $value in $flexDirection
+        .#{$xs-name}-#{$value}
+            flex-direction: #{$value}
+    @each $value in $flexWrap
+        .#{$xs-name}-#{$value}
+            flex-wrap: #{$value}
+    @each $value in $alignItems
+        .#{$xs-name}-items-#{$value}
+            align-items: #{$value}
+    @each $value in $alignContent
+        .#{$xs-name}-content-#{$value}
+            align-content: #{$value}
+    @each $value in $alignSelf
+        .#{$xs-name}-self-#{$value}
+            align-self: #{$value}
+    @each $value in $justifyContent
+        .#{$xs-name}-justify-#{$value}
+            justify-content: #{$value}
+    @each $property, $value in $flex
+        .#{$xs-name}-flex-#{$property}
+            flex: #{$value}
+    @each $value in $flexGrow
+        .#{$xs-name}-grow-#{$value}
+            flex-grow: #{$value}
+    @each $value in $flexShrink
+        .#{$xs-name}-shrink-#{$value}
+            flex-shrink: #{$value}
+    @each $property, $value in $order
+        .#{$xs-name}-order-#{$property}
+            order: #{$value}
+    @each $property, $value in $widths
+        .#{$xs-name}-w-#{$property}
+            width: #{$value}
+    @each $property, $value in $heights
+        .#{$xs-name}-h-#{$property}
+            height: #{$value}
+    @each $value in $fracWidths
+        .#{$xs-name}-w-#{str-replace(#{$value}, '.', '-')}
+            width: calc( #{str-replace(#{$value}, '.', ' / ')} * 100%)
+    @each $property, $value in $quarterWidths
+        .#{$xs-name}-min-w-#{str-replace(#{$property}, '.', '-')}
+            min-width: (#{str-replace(#{$value}, '.', ' / ')})
+        .#{$xs-name}-max-w-#{str-replace(#{$property}, '.', '-')}
+            max-width: (#{str-replace(#{$value}, '.', ' / ')})
+        .#{$xs-name}-min-h-#{str-replace(#{$property}, '.', '-')}
+            min-height: (#{str-replace(#{$value}, '.', ' / ')})
+        .#{$xs-name}-max-h-#{str-replace(#{$property}, '.', '-')}
+            min-height: (#{str-replace(#{$value}, '.', ' / ')})
+    @each $property, $value in $spacing
+        .#{$xs-name}-p-#{$property}
+            padding: #{$value}
+        .#{$xs-name}-pt-#{$property}
+            padding-top: #{$value}
+        .#{$xs-name}-pr-#{$property}
+            padding-right: #{$value}
+        .#{$xs-name}-pb-#{$property}
+            padding-bottom: #{$value}
+        .#{$xs-name}-pl-#{$property}
+            padding-left: #{$value}
+        .#{$xs-name}-ptb-#{$property}
+            padding-top: #{$value}
+            padding-bottom: #{$value}
+        .#{$xs-name}-prl-#{$property}
+            padding-right: #{$value}
+            padding-left: #{$value}
+        .#{$xs-name}-m-#{$property}
+            margin: #{$value}
+        .#{$xs-name}-mt-#{$property}
+            margin-top: #{$value}
+        .#{$xs-name}-mr-#{$property}
+            margin-right: #{$value}
+        .#{$xs-name}-mb-#{$property}
+            margin-bottom: #{$value}
+        .#{$xs-name}-ml-#{$property}
+            margin-left: #{$value}
+        .#{$xs-name}-mtb-#{$property}
+            margin-top: #{$value}
+            margin-bottom: #{$value}
+        .#{$xs-name}-mrl-#{$property}
+            margin-right: #{$value}
+            margin-left: #{$value}
+    @each $property, $value in $fontSize    
+        .#{$xs-name}-font-#{$property}
+            font-size: #{$value}
+
+@media all and ($sm-min) and ($md-min)
+    @each $value in $displays
+        .#{$sm-name}-#{$value}
+            display: #{$value}
+    @each $value in $positions
+        .#{$sm-name}-#{$value}
+            position: #{$value}
+    @each $value in $visibilities
+        .#{$sm-name}-#{$value}
+            visibility: #{$value}
+    @each $value in $indexes
+        .#{$sm-name}-z#{$value}
+            z-index: #{$value}
+    @each $value in $flexDirection
+        .#{$sm-name}-#{$value}
+            flex-direction: #{$value}
+    @each $value in $flexWrap
+        .#{$sm-name}-#{$value}
+            flex-wrap: #{$value}
+    @each $value in $alignItems
+        .#{$sm-name}-items-#{$value}
+            align-items: #{$value}
+    @each $value in $alignContent
+        .#{$sm-name}-content-#{$value}
+            align-content: #{$value}
+    @each $value in $alignSelf
+        .#{$sm-name}-self-#{$value}
+            align-self: #{$value}
+    @each $value in $justifyContent
+        .#{$sm-name}-justify-#{$value}
+            justify-content: #{$value}
+    @each $property, $value in $flex
+        .#{$sm-name}-flex-#{$property}
+            flex: #{$value}
+    @each $value in $flexGrow
+        .#{$sm-name}-grow-#{$value}
+            flex-grow: #{$value}
+    @each $value in $flexShrink
+        .#{$sm-name}-shrink-#{$value}
+            flex-shrink: #{$value}
+    @each $property, $value in $order
+        .#{$sm-name}-order-#{$property}
+            order: #{$value}
+    @each $property, $value in $widths
+        .#{$sm-name}-w-#{$property}
+            width: #{$value}
+    @each $property, $value in $heights
+        .#{$sm-name}-h-#{$property}
+            height: #{$value}
+    @each $value in $fracWidths
+        .#{$sm-name}-w-#{str-replace(#{$value}, '.', '-')}
+            width: calc( #{str-replace(#{$value}, '.', ' / ')} * 100%)
+    @each $property, $value in $quarterWidths
+        .#{$sm-name}-min-w-#{str-replace(#{$property}, '.', '-')}
+            min-width: (#{str-replace(#{$value}, '.', ' / ')})
+        .#{$sm-name}-max-w-#{str-replace(#{$property}, '.', '-')}
+            max-width: (#{str-replace(#{$value}, '.', ' / ')})
+        .#{$sm-name}-min-h-#{str-replace(#{$property}, '.', '-')}
+            min-height: (#{str-replace(#{$value}, '.', ' / ')})
+        .#{$sm-name}-max-h-#{str-replace(#{$property}, '.', '-')}
+            min-height: (#{str-replace(#{$value}, '.', ' / ')})
+    @each $property, $value in $spacing
+        .#{$sm-name}-p-#{$property}
+            padding: #{$value}
+        .#{$sm-name}-pt-#{$property}
+            padding-top: #{$value}
+        .#{$sm-name}-pr-#{$property}
+            padding-right: #{$value}
+        .#{$sm-name}-pb-#{$property}
+            padding-bottom: #{$value}
+        .#{$sm-name}-pl-#{$property}
+            padding-left: #{$value}
+        .#{$sm-name}-ptb-#{$property}
+            padding-top: #{$value}
+            padding-bottom: #{$value}
+        .#{$sm-name}-prl-#{$property}
+            padding-right: #{$value}
+            padding-left: #{$value}
+        .#{$sm-name}-m-#{$property}
+            margin: #{$value}
+        .#{$sm-name}-mt-#{$property}
+            margin-top: #{$value}
+        .#{$sm-name}-mr-#{$property}
+            margin-right: #{$value}
+        .#{$sm-name}-mb-#{$property}
+            margin-bottom: #{$value}
+        .#{$sm-name}-ml-#{$property}
+            margin-left: #{$value}
+        .#{$sm-name}-mtb-#{$property}
+            margin-top: #{$value}
+            margin-bottom: #{$value}
+        .#{$sm-name}-mrl-#{$property}
+            margin-right: #{$value}
+            margin-left: #{$value}
+    @each $property, $value in $fontSize    
+        .#{$sm-name}-font-#{$property}
+            font-size: #{$value}
+
+@media all and ($md-min) and ($lg-min)
+    @each $value in $displays
+        .#{$md-name}-#{$value}
+            display: #{$value}
+    @each $value in $positions
+        .#{$md-name}-#{$value}
+            position: #{$value}
+    @each $value in $visibilities
+        .#{$md-name}-#{$value}
+            visibility: #{$value}
+    @each $value in $indexes
+        .#{$md-name}-z#{$value}
+            z-index: #{$value}
+    @each $value in $flexDirection
+        .#{$md-name}-#{$value}
+            flex-direction: #{$value}
+    @each $value in $flexWrap
+        .#{$md-name}-#{$value}
+            flex-wrap: #{$value}
+    @each $value in $alignItems
+        .#{$md-name}-items-#{$value}
+            align-items: #{$value}
+    @each $value in $alignContent
+        .#{$md-name}-content-#{$value}
+            align-content: #{$value}
+    @each $value in $alignSelf
+        .#{$md-name}-self-#{$value}
+            align-self: #{$value}
+    @each $value in $justifyContent
+        .#{$md-name}-justify-#{$value}
+            justify-content: #{$value}
+    @each $property, $value in $flex
+        .#{$md-name}-flex-#{$property}
+            flex: #{$value}
+    @each $value in $flexGrow
+        .#{$md-name}-grow-#{$value}
+            flex-grow: #{$value}
+    @each $value in $flexShrink
+        .#{$md-name}-shrink-#{$value}
+            flex-shrink: #{$value}
+    @each $property, $value in $order
+        .#{$md-name}-order-#{$property}
+            order: #{$value}
+    @each $property, $value in $widths
+        .#{$md-name}-w-#{$property}
+            width: #{$value}
+    @each $property, $value in $heights
+        .#{$md-name}-h-#{$property}
+            height: #{$value}
+    @each $value in $fracWidths
+        .#{$md-name}-w-#{str-replace(#{$value}, '.', '-')}
+            width: calc( #{str-replace(#{$value}, '.', ' / ')} * 100%)
+    @each $property, $value in $quarterWidths
+        .#{$md-name}-min-w-#{str-replace(#{$property}, '.', '-')}
+            min-width: (#{str-replace(#{$value}, '.', ' / ')})
+        .#{$md-name}-max-w-#{str-replace(#{$property}, '.', '-')}
+            max-width: (#{str-replace(#{$value}, '.', ' / ')})
+        .#{$md-name}-min-h-#{str-replace(#{$property}, '.', '-')}
+            min-height: (#{str-replace(#{$value}, '.', ' / ')})
+        .#{$md-name}-max-h-#{str-replace(#{$property}, '.', '-')}
+            min-height: (#{str-replace(#{$value}, '.', ' / ')})
+    @each $property, $value in $spacing
+        .#{$md-name}-p-#{$property}
+            padding: #{$value}
+        .#{$md-name}-pt-#{$property}
+            padding-top: #{$value}
+        .#{$md-name}-pr-#{$property}
+            padding-right: #{$value}
+        .#{$md-name}-pb-#{$property}
+            padding-bottom: #{$value}
+        .#{$md-name}-pl-#{$property}
+            padding-left: #{$value}
+        .#{$md-name}-ptb-#{$property}
+            padding-top: #{$value}
+            padding-bottom: #{$value}
+        .#{$md-name}-prl-#{$property}
+            padding-right: #{$value}
+            padding-left: #{$value}
+        .#{$md-name}-m-#{$property}
+            margin: #{$value}
+        .#{$md-name}-mt-#{$property}
+            margin-top: #{$value}
+        .#{$md-name}-mr-#{$property}
+            margin-right: #{$value}
+        .#{$md-name}-mb-#{$property}
+            margin-bottom: #{$value}
+        .#{$md-name}-ml-#{$property}
+            margin-left: #{$value}
+        .#{$md-name}-mtb-#{$property}
+            margin-top: #{$value}
+            margin-bottom: #{$value}
+        .#{$md-name}-mrl-#{$property}
+            margin-right: #{$value}
+            margin-left: #{$value}
+    @each $property, $value in $fontSize    
+        .#{$md-name}-font-#{$property}
+            font-size: #{$value}
+
+@media all and ($lg-min) and ($xl-min)
+    @each $value in $displays
+        .#{$lg-name}-#{$value}
+            display: #{$value}
+    @each $value in $positions
+        .#{$lg-name}-#{$value}
+            position: #{$value}
+    @each $value in $visibilities
+        .#{$lg-name}-#{$value}
+            visibility: #{$value}
+    @each $value in $indexes
+        .#{$lg-name}-z#{$value}
+            z-index: #{$value}
+    @each $value in $flexDirection
+        .#{$lg-name}-#{$value}
+            flex-direction: #{$value}
+    @each $value in $flexWrap
+        .#{$lg-name}-#{$value}
+            flex-wrap: #{$value}
+    @each $value in $alignItems
+        .#{$lg-name}-items-#{$value}
+            align-items: #{$value}
+    @each $value in $alignContent
+        .#{$lg-name}-content-#{$value}
+            align-content: #{$value}
+    @each $value in $alignSelf
+        .#{$lg-name}-self-#{$value}
+            align-self: #{$value}
+    @each $value in $justifyContent
+        .#{$lg-name}-justify-#{$value}
+            justify-content: #{$value}
+    @each $property, $value in $flex
+        .#{$lg-name}-flex-#{$property}
+            flex: #{$value}
+    @each $value in $flexGrow
+        .#{$lg-name}-grow-#{$value}
+            flex-grow: #{$value}
+    @each $value in $flexShrink
+        .#{$lg-name}-shrink-#{$value}
+            flex-shrink: #{$value}
+    @each $property, $value in $order
+        .#{$lg-name}-order-#{$property}
+            order: #{$value}
+    @each $property, $value in $widths
+        .#{$lg-name}-w-#{$property}
+            width: #{$value}
+    @each $property, $value in $heights
+        .#{$lg-name}-h-#{$property}
+            height: #{$value}
+    @each $value in $fracWidths
+        .#{$lg-name}-w-#{str-replace(#{$value}, '.', '-')}
+            width: calc( #{str-replace(#{$value}, '.', ' / ')} * 100%)
+    @each $property, $value in $quarterWidths
+        .#{$lg-name}-min-w-#{str-replace(#{$property}, '.', '-')}
+            min-width: (#{str-replace(#{$value}, '.', ' / ')})
+        .#{$lg-name}-max-w-#{str-replace(#{$property}, '.', '-')}
+            max-width: (#{str-replace(#{$value}, '.', ' / ')})
+        .#{$lg-name}-min-h-#{str-replace(#{$property}, '.', '-')}
+            min-height: (#{str-replace(#{$value}, '.', ' / ')})
+        .#{$lg-name}-max-h-#{str-replace(#{$property}, '.', '-')}
+            min-height: (#{str-replace(#{$value}, '.', ' / ')})
+    @each $property, $value in $spacing
+        .#{$lg-name}-p-#{$property}
+            padding: #{$value}
+        .#{$lg-name}-pt-#{$property}
+            padding-top: #{$value}
+        .#{$lg-name}-pr-#{$property}
+            padding-right: #{$value}
+        .#{$lg-name}-pb-#{$property}
+            padding-bottom: #{$value}
+        .#{$lg-name}-pl-#{$property}
+            padding-left: #{$value}
+        .#{$lg-name}-ptb-#{$property}
+            padding-top: #{$value}
+            padding-bottom: #{$value}
+        .#{$lg-name}-prl-#{$property}
+            padding-right: #{$value}
+            padding-left: #{$value}
+        .#{$lg-name}-m-#{$property}
+            margin: #{$value}
+        .#{$lg-name}-mt-#{$property}
+            margin-top: #{$value}
+        .#{$lg-name}-mr-#{$property}
+            margin-right: #{$value}
+        .#{$lg-name}-mb-#{$property}
+            margin-bottom: #{$value}
+        .#{$lg-name}-ml-#{$property}
+            margin-left: #{$value}
+        .#{$lg-name}-mtb-#{$property}
+            margin-top: #{$value}
+            margin-bottom: #{$value}
+        .#{$lg-name}-mrl-#{$property}
+            margin-right: #{$value}
+            margin-left: #{$value}
+    @each $property, $value in $fontSize    
+        .#{$lg-name}-font-#{$property}
+            font-size: #{$value}
+
+@media all and ($xl-min)
+    @each $value in $displays
+        .#{$xl-name}-#{$value}
+            display: #{$value}
+    @each $value in $positions
+        .#{$xl-name}-#{$value}
+            position: #{$value}
+    @each $value in $visibilities
+        .#{$xl-name}-#{$value}
+            visibility: #{$value}
+    @each $value in $indexes
+        .#{$xl-name}-z#{$value}
+            z-index: #{$value}
+    @each $value in $flexDirection
+        .#{$xl-name}-#{$value}
+            flex-direction: #{$value}
+    @each $value in $flexWrap
+        .#{$xl-name}-#{$value}
+            flex-wrap: #{$value}
+    @each $value in $alignItems
+        .#{$xl-name}-items-#{$value}
+            align-items: #{$value}
+    @each $value in $alignContent
+        .#{$xl-name}-content-#{$value}
+            align-content: #{$value}
+    @each $value in $alignSelf
+        .#{$xl-name}-self-#{$value}
+            align-self: #{$value}
+    @each $value in $justifyContent
+        .#{$xl-name}-justify-#{$value}
+            justify-content: #{$value}
+    @each $property, $value in $flex
+        .#{$xl-name}-flex-#{$property}
+            flex: #{$value}
+    @each $value in $flexGrow
+        .#{$xl-name}-grow-#{$value}
+            flex-grow: #{$value}
+    @each $value in $flexShrink
+        .#{$xl-name}-shrink-#{$value}
+            flex-shrink: #{$value}
+    @each $property, $value in $order
+        .#{$xl-name}-order-#{$property}
+            order: #{$value}
+    @each $property, $value in $widths
+        .#{$xl-name}-w-#{$property}
+            width: #{$value}
+    @each $property, $value in $heights
+        .#{$xl-name}-h-#{$property}
+            height: #{$value}
+    @each $value in $fracWidths
+        .#{$xl-name}-w-#{str-replace(#{$value}, '.', '-')}
+            width: calc( #{str-replace(#{$value}, '.', ' / ')} * 100%)
+    @each $property, $value in $quarterWidths
+        .#{$xl-name}-min-w-#{str-replace(#{$property}, '.', '-')}
+            min-width: (#{str-replace(#{$value}, '.', ' / ')})
+        .#{$xl-name}-max-w-#{str-replace(#{$property}, '.', '-')}
+            max-width: (#{str-replace(#{$value}, '.', ' / ')})
+        .#{$xl-name}-min-h-#{str-replace(#{$property}, '.', '-')}
+            min-height: (#{str-replace(#{$value}, '.', ' / ')})
+        .#{$xl-name}-max-h-#{str-replace(#{$property}, '.', '-')}
+            min-height: (#{str-replace(#{$value}, '.', ' / ')})
+    @each $property, $value in $spacing
+        .#{$xl-name}-p-#{$property}
+            padding: #{$value}
+        .#{$xl-name}-pt-#{$property}
+            padding-top: #{$value}
+        .#{$xl-name}-pr-#{$property}
+            padding-right: #{$value}
+        .#{$xl-name}-pb-#{$property}
+            padding-bottom: #{$value}
+        .#{$xl-name}-pl-#{$property}
+            padding-left: #{$value}
+        .#{$xl-name}-ptb-#{$property}
+            padding-top: #{$value}
+            padding-bottom: #{$value}
+        .#{$xl-name}-prl-#{$property}
+            padding-right: #{$value}
+            padding-left: #{$value}
+        .#{$xl-name}-m-#{$property}
+            margin: #{$value}
+        .#{$xl-name}-mt-#{$property}
+            margin-top: #{$value}
+        .#{$xl-name}-mr-#{$property}
+            margin-right: #{$value}
+        .#{$xl-name}-mb-#{$property}
+            margin-bottom: #{$value}
+        .#{$xl-name}-ml-#{$property}
+            margin-left: #{$value}
+        .#{$xl-name}-mtb-#{$property}
+            margin-top: #{$value}
+            margin-bottom: #{$value}
+        .#{$xl-name}-mrl-#{$property}
+            margin-right: #{$value}
+            margin-left: #{$value}
+    @each $property, $value in $fontSize    
+        .#{$xl-name}-font-#{$property}
+            font-size: #{$value}
